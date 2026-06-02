@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oghenekaro Betty · Oriflame Distributor</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#1A1A1A;
+  --dark:#0f0f0f;
+  --mid:#555;
+  --muted:#888;
+  --border:#E5E5E5;
+  --bg:#F8F8F8;
+  --white:#FFFFFF;
+  --gold:#C9A76C;
+  --gold-lt:#EDD9A3;
+  --gold-dk:#8B6533;
+  --green:#2D7A4F;
+  --green-bg:#EAF3EE;
+  --green-dark:#1A4D32;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--black);line-height:1.6;overflow-x:hidden}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--black);color:rgba(255,255,255,.7);text-align:center;padding:9px 1rem;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.topbar strong{color:var(--gold-lt)}
+
+/* ── HEADER ── */
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.hdr-top{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:110px;gap:1.5rem}
+
+/* CIRCULAR AVATAR CARD in header — big & bold */
+.hdr-avatar-wrap{
+  position:relative;
+  flex-shrink:0;
+  width:92px;
+  height:92px;
+  filter:drop-shadow(0 4px 14px rgba(201,167,108,.4));
+}
+.hdr-avatar{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  border:4px solid var(--gold);
+  display:block;
+  box-shadow:0 0 0 6px rgba(201,167,108,.15);
+}
+/* curved name ribbon — spherically carved at the base */
+.hdr-avatar-label{
+  position:absolute;
+  bottom:-3px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  background:var(--black);
+  color:var(--gold);
+  font-size:7.5px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  padding:4px 11px 6px;
+  border-radius:0 0 55px 55px;
+  pointer-events:none;
+  border:2px solid var(--gold);
+  border-top:none;
+  line-height:1.35;
+  text-align:center;
+  min-width:86px;
+}
+.hdr-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.hdr-logo-divider{width:1px;height:30px;background:var(--border)}
+.hdr-logo-sub{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);font-weight:600;line-height:1.3}
+.hdr-logo-name{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--black);line-height:1}
+.hdr-search{flex:1;max-width:400px;position:relative}
+.hdr-search input{width:100%;border:1px solid var(--border);border-radius:30px;padding:9px 16px 9px 40px;font-size:13px;font-family:var(--sans);background:var(--bg);color:var(--black);outline:none;transition:border-color .2s}
+.hdr-search input:focus{border-color:#aaa}
+.hdr-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.hdr-actions{display:flex;align-items:center;gap:1.5rem}
+.hdr-biz{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--black);text-decoration:none;font-weight:500;white-space:nowrap}
+.hdr-biz:hover{color:var(--green)}
+.hdr-signin{font-size:13px;color:var(--mid);text-decoration:none;font-weight:400}
+.hdr-signin:hover{color:var(--black)}
+.hdr-cart{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);text-decoration:none;color:var(--black);transition:all .2s}
+.hdr-cart:hover{border-color:var(--black)}
+.hdr-nav{border-top:1px solid var(--border)}
+.hdr-nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;gap:2.5rem;height:44px;align-items:center}
+.hdr-nav-inner a{font-size:12px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--muted);font-weight:500;transition:color .2s;position:relative;height:100%;display:flex;align-items:center}
+.hdr-nav-inner a:hover,.hdr-nav-inner a.active{color:var(--black)}
+.hdr-nav-inner a.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--black)}
+
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:440px;overflow:hidden}
+.hero-img{background:#1A1A1A;position:relative;overflow:hidden;min-height:440px}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.hero-content{background:#D4E8D8;display:flex;align-items:center;justify-content:center;padding:3rem;position:relative}
+.hero-content-inner{max-width:420px;text-align:center}
+.hero-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2D7A4F;margin-bottom:1rem;font-weight:600}
+.hero-title{font-family:var(--serif);font-size:clamp(36px,4.5vw,58px);font-weight:300;color:#1A3A2A;line-height:1.1;margin-bottom:1.5rem}
+.hero-title em{font-style:italic}
+.hero-dots{display:flex;justify-content:center;gap:6px;margin-top:1.5rem}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:background .2s;border:none}
+.hero-dot.on{background:var(--black)}
+@media(max-width:960px){.hero{grid-template-columns:1fr}.hero-img{display:none}}
+
+/* ── BTNs ── */
+.btn-dark{display:inline-block;background:var(--black);color:var(--white);padding:11px 28px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;border:none;cursor:pointer;font-family:var(--sans)}
+.btn-dark:hover{background:#333;transform:translateY(-1px)}
+.btn-outline-dark{display:inline-block;background:transparent;color:var(--black);padding:11px 28px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;border:1.5px solid var(--black)}
+.btn-outline-dark:hover{background:var(--black);color:var(--white)}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--black);padding:13px 34px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;border:none;cursor:pointer;font-family:var(--sans)}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.btn-green{display:inline-block;border:1.5px solid var(--green-dark);color:var(--green-dark);padding:11px 30px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-green:hover{background:var(--green-dark);color:#fff}
+.btn-outline-sm{display:inline-block;border:1.5px solid var(--black);color:var(--black);padding:10px 28px;border-radius:30px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-outline-sm:hover{background:var(--black);color:var(--white)}
+
+/* ── PROFILE BANNER ── */
+.profile-banner{background:var(--dark);padding:0;overflow:hidden}
+.profile-banner-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;min-height:420px}
+.profile-photo-side{position:relative;overflow:hidden}
+.profile-photo-side img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.92) contrast(1.05)}
+.profile-photo-side::after{content:'';position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to right,transparent,var(--dark))}
+.profile-info-side{padding:3.5rem 4rem 3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.profile-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;display:block}
+.profile-name{font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);font-weight:600;color:#fff;line-height:1.0;letter-spacing:-.5px}
+.profile-name em{font-style:italic;color:var(--gold)}
+.profile-lastname{font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);font-weight:300;color:#fff;line-height:1.0;font-style:italic}
+.profile-title-row{display:flex;align-items:center;gap:.75rem;margin:1.2rem 0 1.8rem;flex-wrap:wrap}
+.profile-title{font-size:14px;color:rgba(255,255,255,.5);font-weight:300;letter-spacing:.5px}
+.profile-sep{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.profile-location{font-size:13px;color:rgba(255,255,255,.4);font-weight:300}
+.profile-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.pbadge{font-size:10px;letter-spacing:.5px;border-radius:20px;padding:5px 13px;font-weight:500}
+.pbadge.verified{border:1px solid var(--gold);color:var(--gold);background:rgba(201,167,108,.1)}
+.pbadge.plain{border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);background:transparent}
+.profile-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+@media(max-width:768px){
+  .profile-banner-inner{grid-template-columns:1fr}
+  .profile-photo-side{height:320px}
+  .profile-photo-side::after{display:none}
+  .profile-info-side{padding:2.5rem 2rem}
+  .profile-name,.profile-lastname{font-size:clamp(36px,10vw,54px)}
+}
+
+/* ── SECTIONS ── */
+section{padding:4rem 2rem}
+.inner{max-width:1280px;margin:0 auto}
+.sec-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,38px);font-weight:400;color:var(--black);line-height:1.15}
+.sec-title em{font-style:italic}
+.sec-underline{display:inline-block;width:36px;height:1.5px;background:var(--black);margin-top:10px}
+.sec-underline.center{display:block;margin:10px auto 0}
+
+/* ── OUR ICONS ── */
+.icons-section{background:var(--white);padding:3.5rem 2rem}
+.icons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+@media(max-width:768px){.icons-grid{grid-template-columns:repeat(2,1fr)}}
+.icon-card{background:var(--white);padding:1.5rem 1rem;display:block;text-decoration:none;transition:background .2s;position:relative}
+.icon-card:hover{background:var(--bg)}
+.icon-card-actions{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;opacity:0;transition:opacity .2s}
+.icon-card:hover .icon-card-actions{opacity:1}
+.icon-action{width:30px;height:30px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s}
+.icon-action:hover{border-color:var(--black)}
+.icon-img-wrap{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;overflow:hidden}
+.icon-img-wrap img{width:100%;height:100%;object-fit:contain;transition:transform .3s}
+.icon-card:hover .icon-img-wrap img{transform:scale(1.04)}
+.icon-stars{color:var(--gold);font-size:11px;margin-bottom:4px}
+.icon-count{font-size:11px;color:var(--muted);margin-left:4px}
+.icon-coll{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:3px;font-weight:500}
+.icon-name{font-size:14px;color:var(--black);margin-bottom:6px;line-height:1.4;font-weight:400}
+.icon-price{font-size:15px;font-weight:600;color:var(--black)}
+.icons-view-all{text-align:center;margin-top:2.5rem}
+
+/* ── SPLIT BANNER ── */
+.split-banner{display:grid;grid-template-columns:1fr 1fr;min-height:360px;overflow:hidden}
+.split-img{overflow:hidden}
+.split-img img{width:100%;height:100%;object-fit:cover}
+.split-content{display:flex;align-items:center;padding:3rem;background:var(--bg)}
+.split-content-inner{max-width:380px}
+.split-content h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--black);line-height:1.2;margin-bottom:1rem}
+.split-content p{font-size:14px;color:var(--mid);line-height:1.8;font-weight:300;margin-bottom:1.5rem}
+@media(max-width:960px){.split-banner{grid-template-columns:1fr}.split-img{display:none}}
+
+/* ── PRODUCTS ── */
+.products-section{background:var(--white);padding:4rem 2rem}
+.prod-section-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:1rem}
+.prod-section-title h2{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--black)}
+.prod-section-title a{font-size:12px;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px}
+.prod-section-title a:hover{color:var(--black);border-color:var(--black)}
+.prods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--border)}
+.prod-card{background:var(--white);padding:1rem;position:relative;transition:background .2s}
+.prod-card:hover{background:var(--bg)}
+.prod-actions{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;opacity:0;transition:opacity .2s}
+.prod-card:hover .prod-actions{opacity:1}
+.prod-tag{position:absolute;top:12px;left:12px;z-index:2;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;font-weight:600}
+.prod-tag.sale{background:#C0392B;color:#fff}
+.prod-tag.new-tag{background:var(--black);color:var(--gold)}
+.prod-tag.hit{background:var(--gold);color:var(--black)}
+.prod-img-wrap{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;overflow:hidden;background:var(--bg)}
+.prod-img-wrap img{width:100%;height:100%;object-fit:contain;transition:transform .35s}
+.prod-card:hover .prod-img-wrap img{transform:scale(1.05)}
+.prod-coll{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:3px;font-weight:500}
+.prod-name{font-size:14px;color:var(--black);margin-bottom:5px;line-height:1.4;font-weight:400}
+.prod-desc-sm{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:.75rem;font-weight:300}
+.prod-stars{color:var(--gold);font-size:11px;margin-bottom:4px}
+.prod-price{font-size:15px;font-weight:600;color:var(--black)}
+.prod-price s{font-size:12px;color:var(--muted);font-weight:300;margin-right:4px;text-decoration:line-through}
+.prod-order{display:block;margin-top:.75rem;text-align:center;background:var(--black);color:var(--white);padding:9px;border-radius:25px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:var(--sans);width:100%}
+.prod-order:hover{background:#333}
+
+/* ── VALUES ── */
+.values-section{background:var(--green-bg);padding:3.5rem 2rem}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,.06)}
+@media(max-width:700px){.values-grid{grid-template-columns:1fr}}
+.value-card{background:var(--green-bg);padding:2.5rem 2rem;text-align:center}
+.value-icon{font-size:32px;margin-bottom:1rem;display:block}
+.value-title{font-family:var(--serif);font-size:20px;font-weight:400;color:#1A3A2A;margin-bottom:.5rem}
+.value-body{font-size:13px;color:#3D5A4A;line-height:1.75;font-weight:300}
+.values-cta{text-align:center;margin-top:2.5rem}
+
+/* ── JOIN ── */
+.join-section{background:var(--black);padding:5rem 2rem}
+.join-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:960px){.join-inner{grid-template-columns:1fr;gap:3rem}}
+.join-left .sec-title{color:var(--white)}
+.join-left .sec-title em{color:var(--gold)}
+.join-left .sec-desc{color:rgba(255,255,255,.5)}
+.join-steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.j-step{display:flex;gap:1rem;align-items:flex-start}
+.j-num{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);font-family:var(--serif);font-size:16px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.j-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+.j-body{font-size:12px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.65}
+.join-right{display:flex;flex-direction:column;gap:1rem}
+.join-perk{display:flex;align-items:center;gap:.85rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.1rem 1.25rem}
+.jp-icon{font-size:24px;flex-shrink:0}
+.jp-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px}
+.jp-body{font-size:12px;color:rgba(255,255,255,.4);font-weight:300}
+.join-cta{margin-top:.5rem;text-align:center}
+
+/* ── WHY ── */
+.why-section{background:var(--white);padding:4rem 2rem;border-top:1px solid var(--border)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:var(--border)}
+.why-card{background:var(--white);padding:2rem 1.5rem;text-align:center;transition:background .2s}
+.why-card:hover{background:var(--bg)}
+.why-ico{font-size:30px;margin-bottom:.85rem;display:block}
+.why-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--black);margin-bottom:.4rem}
+.why-body{font-size:12px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--bg);padding:4rem 2rem}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.testi{background:var(--white);border:1px solid var(--border);padding:1.75rem;border-radius:2px}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:.75rem}
+.testi-body{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--black);line-height:1.65;margin-bottom:1rem;font-weight:300}
+.testi-auth{font-size:12px;color:var(--muted)}
+.testi-auth::before{content:'— '}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--white);padding:4rem 2rem;border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:960px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--black);margin-bottom:1rem}
+.contact-info p{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
+.contact-channels{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem}
+.chan{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--mid);font-size:14px;transition:color .2s;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.chan:hover{color:var(--black)}
+.chan:last-child{border-bottom:none}
+.chan span{font-size:20px;width:28px;flex-shrink:0}
+.contact-form{display:flex;flex-direction:column;gap:.85rem}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+.fg label{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+.fg input,.fg textarea,.fg select{border:1px solid var(--border);padding:11px 13px;font-family:var(--sans);font-size:13px;color:var(--black);outline:none;background:var(--white);transition:border-color .2s;border-radius:2px;width:100%}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--black)}
+.fg textarea{resize:vertical;min-height:100px}
+
+/* ── FOOTER ── */
+footer{background:var(--black);color:rgba(255,255,255,.4);padding:3rem 2rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand-name{font-family:var(--serif);font-size:20px;font-weight:300;color:#fff;letter-spacing:2px;text-transform:uppercase;margin-bottom:.4rem}
+.footer-brand-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:block}
+.footer-about{font-size:12px;line-height:1.8;font-weight:300;max-width:260px}
+.footer-col h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.85rem;font-weight:500}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;margin-bottom:.5rem;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:rgba(255,255,255,.7)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:11px}
+.footer-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
+
+/* ── SCROLL REVEAL ── */
+.r{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.r.in{opacity:1;transform:none}
+
+@media(max-width:640px){
+  .hdr-search{display:none}
+  .hdr-actions .hdr-biz{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🚚 Free delivery · Port Harcourt &amp; all 36 States &nbsp;·&nbsp; <strong>WhatsApp: 0800-XXX-XXXX</strong> &nbsp;·&nbsp; 23% discount on all orders</div>
+
+<header>
+  <div class="hdr-top">
+
+    <!-- CIRCULAR PHOTO CARD -->
+    <div class="hdr-avatar-wrap">
+      <img class="hdr-avatar" src="https://raw.githubusercontent.com/BettyOriflame/Business/main/betty.webp" alt="Oghenekaro Betty">
+      <div class="hdr-avatar-label">Oghenekaro Betty<br>Authorised Distributor</div>
+    </div>
+
+    <!-- ORIFLAME LOGO + NAME -->
+    <a href="#" class="hdr-logo">
+      <img class="hdr-logo-img" src="https://media-cdn.oriflame.com/contentImage?externalMediaId=contentManagementMedia%2Fimages%2F2024%2FNovember%2F28%2FORIFLAME_LOGO_RGB_POSITIVE_POS.png&version=1&q=90"
+           alt="Oriflame" style="height:32px;width:auto"
+           onerror="this.replaceWith(Object.assign(document.createElement('span'),{style:'font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:3px',textContent:'Oriflame'}))">
+      <div class="hdr-logo-divider"></div>
+      <div>
+        <div class="hdr-logo-sub">Authorised Distributor</div>
+        <div class="hdr-logo-name">Oghenekaro Betty</div>
+      </div>
+    </a>
+
+    <div class="hdr-search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search skincare, fragrance, makeup, wellness…">
+    </div>
+    <div class="hdr-actions">
+      <a href="#join" class="hdr-biz">Oriflame Business Opportunity</a>
+      <a href="#contact" class="hdr-signin">Order / Enquire</a>
+      <a href="#contact" class="hdr-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hdr-nav">
+    <div class="hdr-nav-inner">
+      <a href="#products" class="active">Offers</a>
+      <a href="#categories">Virtual Tools</a>
+      <a href="#products">Skincare</a>
+      <a href="#products">Fragrance</a>
+      <a href="#products">Makeup</a>
+      <a href="#products">Wellness</a>
+      <a href="#join">Business</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-img">
+    <img id="heroImg" src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90" alt="Oriflame products" onerror="this.parentElement.style.background='#222'">
+  </div>
+  <div class="hero-content" id="heroSlideArea">
+    <div class="hero-content-inner">
+      <p class="hero-eyebrow" id="hSlideEye">Divine</p>
+      <h1 class="hero-title" id="hSlideTitle">Glam Feminine scent to<br><em>own the night…</em></h1>
+      <a href="#contact" class="btn-dark">Shop Now</a>
+      <div class="hero-dots">
+        <button class="hero-dot on" onclick="heroGo(0)"></button>
+        <button class="hero-dot" onclick="heroGo(1)"></button>
+        <button class="hero-dot" onclick="heroGo(2)"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OUR ICONS -->
+<section class="icons-section r" id="icons">
+  <div class="inner">
+    <div style="margin-bottom:2.5rem">
+      <h2 class="sec-title">Our <em>icons</em></h2>
+      <span class="sec-underline"></span>
+    </div>
+    <div class="icons-grid">
+      <a href="#contact" class="icon-card">
+        <div class="icon-card-actions"><button class="icon-action">♡</button><button class="icon-action" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒</button></div>
+        <div class="icon-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46989%2f46989_1.png&MediaId=19550468&Version=3&q=90" alt="Sweet Mandarin Balm" onerror="this.parentElement.innerHTML='<span style=font-size:60px>🍊</span>'"></div>
+        <div class="icon-stars">★★★★★ <span class="icon-count">(3,236)</span></div>
+        <div class="icon-coll">Tender Care</div>
+        <div class="icon-name">Sweet Mandarin Multi-purpose Balm</div>
+        <div class="icon-price">₦9,490.00</div>
+      </a>
+      <a href="#contact" class="icon-card">
+        <div class="icon-card-actions"><button class="icon-action">♡</button><button class="icon-action" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒</button></div>
+        <div class="icon-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46968%2f46968_1.png&MediaId=19554510&Version=3&q=90" alt="Milk Honey Cream" onerror="this.parentElement.innerHTML='<span style=font-size:60px>🍯</span>'"></div>
+        <div class="icon-stars">★★★★★ <span class="icon-count">(5,228)</span></div>
+        <div class="icon-coll">Milk &amp; Honey Gold</div>
+        <div class="icon-name">Nourishing Hand &amp; Body Cream</div>
+        <div class="icon-price">₦22,390.00</div>
+      </a>
+      <a href="#contact" class="icon-card">
+        <div class="icon-card-actions"><button class="icon-action">♡</button><button class="icon-action" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒</button></div>
+        <div class="icon-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47511%2f47511_1.png&MediaId=19156172&Version=1&q=90" alt="Essenza Parfum" onerror="this.parentElement.innerHTML='<span style=font-size:60px>💜</span>'"></div>
+        <div class="icon-stars">★★★★★ <span class="icon-count">(3,088)</span></div>
+        <div class="icon-coll">Giordani Gold</div>
+        <div class="icon-name">Essenza Parfum</div>
+        <div class="icon-price">₦89,990.00</div>
+      </a>
+      <a href="#contact" class="icon-card">
+        <div class="icon-card-actions"><button class="icon-action">♡</button><button class="icon-action" onclick="event.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒</button></div>
+        <div class="icon-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f12760%2f12760_1.png&MediaId=20233595&Version=1&q=90" alt="Natural Balm" onerror="this.parentElement.innerHTML='<span style=font-size:60px>🌿</span>'"></div>
+        <div class="icon-stars">★★★★★ <span class="icon-count">(6,157)</span></div>
+        <div class="icon-coll">Tender Care</div>
+        <div class="icon-name">Natural Multi-purpose Balm</div>
+        <div class="icon-price">₦9,490.00</div>
+      </a>
+    </div>
+    <div class="icons-view-all r"><a href="#contact" class="btn-outline-sm">View All Products</a></div>
+  </div>
+</section>
+
+<!-- SPLIT BANNER -->
+<div class="split-banner r" id="categories">
+  <div class="split-img">
+    <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90" alt="Find your routine" onerror="this.parentElement.style.background='#1C2B1E'">
+  </div>
+  <div class="split-content">
+    <div class="split-content-inner">
+      <h2>Find Your Ideal Routine!</h2>
+      <p>Every skin is unique. Message me directly and I'll help you find the perfect Oriflame routine tailored to your skin type, concerns, and goals — completely free.</p>
+      <a href="#contact" class="btn-dark">Get My Routine</a>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products-section r" id="products">
+  <div class="inner">
+    <div class="prod-section-title">
+      <h2>The Art of <em style="font-family:var(--serif);font-style:italic">Nurturing Yourself</em></h2>
+      <a href="#contact">View All Products →</a>
+    </div>
+    <div class="prods-grid">
+      <div class="prod-card">
+        <span class="prod-tag new-tag">New</span>
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90" alt="Divine Dark Velvet" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌹</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Divine</div>
+        <div class="prod-name">Dark Velvet Eau De Parfum</div>
+        <div class="prod-desc-sm">Channel diva energy with this addictive floral rose perfume for night.</div>
+        <div class="prod-price">₦46,500.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <span class="prod-tag sale">Sale</span>
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90" alt="Glacier Extreme" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍃</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Glacier</div>
+        <div class="prod-name">Extreme Eau De Toilette</div>
+        <div class="prod-desc-sm">Powerful masculine fragrance with frosted citrus and black stone accord.</div>
+        <div class="prod-price"><s>₦38,000</s> ₦32,500.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90" alt="Miss Giordani Deo" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌸</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Giordani Gold</div>
+        <div class="prod-name">Miss Giordani Anti-perspirant Roll-On</div>
+        <div class="prod-desc-sm">Perfumed antiperspirant with lasting protection and a luxurious scent.</div>
+        <div class="prod-price">₦14,990.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <span class="prod-tag hit">Bestseller</span>
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47511%2f47511_1.png&MediaId=19156172&Version=1&q=90" alt="Essenza Parfum" onerror="this.parentElement.innerHTML='<span style=font-size:64px>💜</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Giordani Gold</div>
+        <div class="prod-name">Essenza Parfum</div>
+        <div class="prod-desc-sm">White floral perfume with orange blossom, citrus and warm woody notes.</div>
+        <div class="prod-price">₦89,990.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46968%2f46968_1.png&MediaId=19554510&Version=3&q=90" alt="Milk Honey Cream" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍯</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Milk &amp; Honey Gold</div>
+        <div class="prod-name">Nourishing Hand &amp; Body Cream</div>
+        <div class="prod-desc-sm">Rich moisturising cream with organically sourced milk and honey extracts.</div>
+        <div class="prod-price"><s>₦26,000</s> ₦22,390.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46989%2f46989_1.png&MediaId=19550468&Version=3&q=90" alt="Sweet Mandarin Balm" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍊</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Tender Care</div>
+        <div class="prod-name">Sweet Mandarin Multi-purpose Balm</div>
+        <div class="prod-desc-sm">Deeply hydrates, nourishes and protects dry lips and skin all over the body.</div>
+        <div class="prod-price">₦9,490.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f12760%2f12760_1.png&MediaId=20233595&Version=1&q=90" alt="Natural Balm" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌿</span>'"></div>
+        <div class="prod-stars">★★★★★</div>
+        <div class="prod-coll">Tender Care</div>
+        <div class="prod-name">Natural Multi-purpose Balm</div>
+        <div class="prod-desc-sm">The iconic multi-purpose balm. Hydrates, nourishes and protects dry skin.</div>
+        <div class="prod-price">₦9,490.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+      <div class="prod-card r">
+        <span class="prod-tag new-tag">New</span>
+        <div class="prod-actions"><button class="icon-action">♡</button><a href="#contact" class="icon-action" style="text-decoration:none">🛒</a></div>
+        <div class="prod-img-wrap" style="background:#EBF5F8"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90" alt="NovAge" style="filter:hue-rotate(180deg) brightness(1.1)" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🧴</span>'"></div>
+        <div class="prod-stars">★★★★☆</div>
+        <div class="prod-coll">NovAge</div>
+        <div class="prod-name">Ultimate Lift Day Cream</div>
+        <div class="prod-desc-sm">Advanced anti-ageing formula that visibly lifts and firms skin in 4 weeks.</div>
+        <div class="prod-price">₦34,500.00</div>
+        <a href="#contact" class="prod-order">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<div class="values-section r">
+  <div class="inner">
+    <div class="values-grid">
+      <div class="value-card"><span class="value-icon">🏷️</span><h3 class="value-title">23% Discount Off all Orders</h3><p class="value-body">Save 23% off all Oriflame products every time you place an order with me.</p></div>
+      <div class="value-card"><span class="value-icon">💼</span><h3 class="value-title">Be your own boss</h3><p class="value-body">Make your own schedule, work from home, work online — be completely independent.</p></div>
+      <div class="value-card"><span class="value-icon">💰</span><h3 class="value-title">Share the love &amp; earn more</h3><p class="value-body">Invite friends to start their own Oriflame business and make 30% profit on every sale.</p></div>
+    </div>
+    <div class="values-cta r"><a href="#join" class="btn-green">Join the Oriflame Community</a></div>
+  </div>
+</div>
+
+<!-- JOIN -->
+<section class="join-section r" id="join">
+  <div class="join-inner inner">
+    <div class="join-left">
+      <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500">Business Opportunity</span>
+      <h2 class="sec-title" style="color:#fff;margin-top:.75rem">Earn While You <em>Shine</em></h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.45);margin-top:.75rem;line-height:1.8">Join through me and I will personally guide and support your Oriflame journey every single step of the way.</p>
+      <div class="join-steps">
+        <div class="j-step"><div class="j-num">1</div><div><div class="j-title">Register through me</div><div class="j-body">Sign up as an Oriflame distributor with me as your sponsor. Simple, quick and affordable to start.</div></div></div>
+        <div class="j-step"><div class="j-num">2</div><div><div class="j-title">Get your Starter Kit</div><div class="j-body">Receive your welcome kit with catalogues, samples and everything you need to start selling.</div></div></div>
+        <div class="j-step"><div class="j-num">3</div><div><div class="j-title">Share &amp; Earn</div><div class="j-body">Share products, earn 20–30% commission on every sale, and build your own team.</div></div></div>
+        <div class="j-step"><div class="j-num">4</div><div><div class="j-title">Grow your business</div><div class="j-body">Advance through Oriflame's career plan, unlock bigger commissions and travel incentives.</div></div></div>
+      </div>
+    </div>
+    <div class="join-right">
+      <div class="join-perk"><span class="jp-icon">💸</span><div><div class="jp-title">Low-cost to get started</div><div class="jp-body">Minimal registration cost. No large upfront investment required.</div></div></div>
+      <div class="join-perk"><span class="jp-icon">📱</span><div><div class="jp-title">Sell from your phone</div><div class="jp-body">Share catalogues on WhatsApp, Instagram, and social media.</div></div></div>
+      <div class="join-perk"><span class="jp-icon">🎓</span><div><div class="jp-title">Personal mentorship from me</div><div class="jp-body">As your sponsor, I give you hands-on guidance, training and support.</div></div></div>
+      <div class="join-perk"><span class="jp-icon">✈️</span><div><div class="jp-title">Travel &amp; recognition rewards</div><div class="jp-body">Top performers earn travel trips, luxury gifts, and recognition at events.</div></div></div>
+      <div class="join-perk"><span class="jp-icon">📦</span><div><div class="jp-title">Fresh catalogue every month</div><div class="jp-body">New products and offers every catalogue period to grow your sales.</div></div></div>
+      <div class="join-cta"><a href="#contact" class="btn-gold">I Want to Join — Contact Me</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section r">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.5rem">Why Order Through Me</span>
+      <h2 class="sec-title">Your Local <em>Advantage</em></h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="why-grid">
+      <div class="why-card r"><span class="why-ico">✅</span><h3 class="why-title">100% Authentic</h3><p class="why-body">Every product sourced directly from Oriflame. Zero counterfeits, zero compromises — guaranteed genuine always.</p></div>
+      <div class="why-card r"><span class="why-ico">🚚</span><h3 class="why-title">Nigeria-Wide Delivery</h3><p class="why-body">I ship to all 36 states across Nigeria. Fast, reliable, tracked delivery right to your doorstep.</p></div>
+      <div class="why-card r"><span class="why-ico">💬</span><h3 class="why-title">Personal Service</h3><p class="why-body">Talk directly to me on WhatsApp. Honest advice on what works for your skin, hair, and lifestyle.</p></div>
+      <div class="why-card r"><span class="why-ico">💳</span><h3 class="why-title">Easy Payment</h3><p class="why-body">Pay via bank transfer, mobile money, or cash on delivery in Port Harcourt and selected cities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section r">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <h2 class="sec-title">What Customers Say</h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="testi-grid">
+      <div class="testi r"><div class="testi-stars">★★★★★</div><p class="testi-body">"The Giordani Gold Essenza is absolutely heavenly. I get compliments every single time I wear it. Delivery was fast and genuinely authentic!"</p><div class="testi-auth">Adaeze N., Abuja</div></div>
+      <div class="testi r"><div class="testi-stars">★★★★★</div><p class="testi-body">"Betty is so helpful! She recommended the right products for my skin and everything arrived quickly. I've been ordering every month since."</p><div class="testi-auth">Funmi A., Lagos</div></div>
+      <div class="testi r"><div class="testi-stars">★★★★★</div><p class="testi-body">"Fast response on WhatsApp, genuine products delivered to my door. Also joined her team and it's been amazing. Highly recommend!"</p><div class="testi-auth">Chisom O., Port Harcourt</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="r">
+        <h2>Order or<br><em style="font-family:var(--serif);font-style:italic">Get in Touch</em></h2>
+        <p style="font-size:14px;color:var(--mid);line-height:1.8;margin:1rem 0 1.5rem;font-weight:300">Fill the form or reach me directly. I'll respond within a few hours with product availability, pricing and delivery details.</p>
+        <div class="contact-channels">
+          <a href="https://wa.me/234XXXXXXXXXX" class="chan"><span>📱</span> WhatsApp — 0800-XXX-XXXX</a>
+          <a href="tel:+234XXXXXXXXXX" class="chan"><span>📞</span> Call Me — 0800-XXX-XXXX</a>
+          <a href="mailto:your@email.com" class="chan"><span>✉️</span> your@email.com</a>
+          <a href="https://instagram.com" target="_blank" class="chan"><span>📸</span> Instagram — @your_handle</a>
+          <a href="https://facebook.com" target="_blank" class="chan"><span>👍</span> Facebook — Oghenekaro Betty Oriflame</a>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);padding:1.25rem;border-radius:4px">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:.5rem">Distributor</div>
+          <div style="font-size:16px;font-weight:600;color:var(--black)">Oghenekaro Betty</div>
+          <div style="font-size:13px;color:var(--mid)">Oriflame Business · Port Harcourt, Rivers State</div>
+          <div style="font-size:12px;color:var(--green);margin-top:.35rem;font-weight:500">✓ Verified Authorised Distributor</div>
+        </div>
+      </div>
+      <div class="r">
+        <form class="contact-form" onsubmit="handleSub(event)">
+          <div class="fg2">
+            <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name" required></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" placeholder="080XXXXXXXX" required></div>
+          </div>
+          <div class="fg2">
+            <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+            <div class="fg"><label>State / City</label><input type="text" placeholder="e.g. Port Harcourt"></div>
+          </div>
+          <div class="fg">
+            <label>I'm Interested In</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Buying Products</option>
+              <option>Skincare</option>
+              <option>Fragrance &amp; Perfume</option>
+              <option>Makeup</option>
+              <option>Haircare</option>
+              <option>Wellness &amp; Nutrition</option>
+              <option>Men's Products</option>
+              <option>Gift Sets</option>
+              <option>Joining as a Distributor</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Message / Order Details</label>
+            <textarea placeholder="Tell me which products you want, quantities, your delivery address, or any questions…"></textarea>
+          </div>
+          <button type="submit" class="btn-dark" id="subBtn" style="align-self:flex-start;padding:13px 36px">Send Order Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Oriflame</div>
+        <span class="footer-brand-tag">Oghenekaro Betty · Authorised Distributor</span>
+        <p class="footer-about">Independent Oriflame distributor based in Port Harcourt, Rivers State. Serving customers across Nigeria with 100% genuine Oriflame products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#products">Skincare</a><a href="#products">Fragrance</a><a href="#products">Makeup</a><a href="#products">Haircare</a><a href="#products">Wellness</a><a href="#products">Men's</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Icons</h4>
+        <a href="#contact">Sweet Mandarin Balm</a><a href="#contact">Milk &amp; Honey Cream</a><a href="#contact">Essenza Parfum</a><a href="#contact">Natural Balm</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <a href="#join">Join My Team</a><a href="#contact">Contact Betty</a><a href="https://ng.oriflame.com" target="_blank">Oriflame Nigeria</a><a href="#contact">WhatsApp Me</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <a href="#">Oghenekaro Betty Oriflame Business</a> · Port Harcourt, Nigeria</span>
+      <span>Independent distributor. Oriflame® is a registered trademark of Oriflame Cosmetics SA.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── HERO SLIDES ──
+var heroSlides = [
+  {eye:'Divine', title:'Glam Feminine scent to<br><em>own the night&#8230;</em>', bg:'#D4E8D8', tc:'#1A3A2A', ec:'#2D7A4F', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90'},
+  {eye:'Glacier', title:'Unlock Your <em>Spark&#8230;</em>', bg:'#D8E8F0', tc:'#1A2A3A', ec:'#1A5A7A', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90'},
+  {eye:'Giordani Gold', title:'Deodorants that smell<br><em>SO good!</em>', bg:'#F0EBD8', tc:'#3A2A1A', ec:'#8B6533', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90'}
+];
+var hCur = 0;
+function heroGo(n) {
+  hCur = n;
+  var s = heroSlides[n];
+  document.getElementById('hSlideEye').textContent = s.eye;
+  document.getElementById('hSlideTitle').innerHTML = s.title;
+  document.getElementById('heroSlideArea').style.background = s.bg;
+  document.getElementById('hSlideTitle').style.color = s.tc;
+  document.querySelector('.hero-eyebrow').style.color = s.ec;
+  var img = document.getElementById('heroImg');
+  if (img) img.src = s.img;
+  document.querySelectorAll('.hero-dot').forEach(function(d, i) {
+    d.classList.toggle('on', i === n);
+  });
+}
+setInterval(function() { heroGo((hCur + 1) % heroSlides.length); }, 4500);
+
+// ── SCROLL REVEAL (FIXED - no syntax error) ──
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('in');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.r').forEach(function(el) { obs.observe(el); });
+
+// ── FORM ──
+function handleSub(e) {
+  e.preventDefault();
+  var b = document.getElementById('subBtn');
+  b.textContent = '✓ Sent!';
+  b.style.background = '#27ae60';
+  b.disabled = true;
+  setTimeout(function() {
+    b.textContent = 'Send Order Request';
+    b.style.background = '';
+    b.disabled = false;
+    e.target.reset();
+  }, 3500);
+}
+</script>
+</body>
+</html>
