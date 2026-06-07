@@ -304,6 +304,143 @@ footer{background:var(--black);color:rgba(255,255,255,.4);padding:3rem 2rem}
   .hdr-search{display:none}
   .hdr-actions .hdr-biz{display:none}
 }
+
+/* ══════════════════════════════════════════════
+   BUSINESS OPPORTUNITY PAGE STYLES
+══════════════════════════════════════════════ */
+
+/* ── BO HERO ── */
+.bo-hero{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center}
+.bo-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.bo-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.65) 100%)}
+.bo-hero-content{position:relative;z-index:2;max-width:760px;padding:3rem 2rem}
+.bo-hero-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.2rem;display:block}
+.bo-hero-title{font-family:var(--serif);font-size:clamp(42px,6vw,80px);font-weight:300;color:#fff;line-height:1.0;margin-bottom:.6rem}
+.bo-hero-title em{font-style:italic;color:var(--gold-lt)}
+.bo-hero-sub{font-size:16px;color:rgba(255,255,255,.75);font-weight:300;line-height:1.7;margin-bottom:2rem;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* ── DISCOVER CARDS ── */
+.bo-discover{background:var(--white);padding:5rem 2rem}
+.bo-discover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1280px;margin:0 auto}
+@media(max-width:860px){.bo-discover-grid{grid-template-columns:1fr}}
+.bo-card{border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .25s}
+.bo-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.bo-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.bo-card-img-placeholder{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:64px;background:var(--green-bg)}
+.bo-card-body{padding:2rem}
+.bo-card-num{font-family:var(--serif);font-size:13px;letter-spacing:2px;color:var(--gold-dk);font-weight:600;text-transform:uppercase;margin-bottom:1rem;display:block}
+.bo-card-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.bo-card-list li{font-size:14px;color:var(--mid);line-height:1.65;font-weight:300;padding-left:1.25rem;position:relative}
+.bo-card-list li::before{content:'→';position:absolute;left:0;color:var(--green);font-weight:700;font-size:12px;top:2px}
+.bo-card-list li strong{color:var(--black);font-weight:600}
+
+/* ── THREE PILLARS ── */
+.bo-pillars{background:var(--bg);padding:4rem 2rem}
+.bo-pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);max-width:1280px;margin:2.5rem auto 0}
+@media(max-width:700px){.bo-pillars-grid{grid-template-columns:1fr}}
+.bo-pillar{background:var(--white);padding:3rem 2rem;text-align:center;transition:background .2s}
+.bo-pillar:hover{background:var(--green-bg)}
+.bo-pillar-icon{width:72px;height:72px;border-radius:50%;background:var(--green-bg);border:2px solid rgba(45,122,79,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:32px;transition:all .2s}
+.bo-pillar:hover .bo-pillar-icon{background:var(--green);border-color:var(--green)}
+.bo-pillar-title{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--black);margin-bottom:.65rem;letter-spacing:.5px}
+.bo-pillar-body{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300}
+
+/* ── JOIN FORM SECTION ── */
+.bo-join{background:var(--dark);padding:5rem 2rem;position:relative;overflow:hidden}
+.bo-join::before{content:'';position:absolute;inset:0;background:url('https://media-cdn.oriflame.com/contentImage?externalMediaId=800daa6e-0c2b-4aba-bf45-8009dbfe58e9&name=JoinUs_Business_1366x1205&inputFormat=jpg&q=95') center/cover no-repeat;opacity:.12}
+.bo-join-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:860px){.bo-join-inner{grid-template-columns:1fr;gap:3rem}}
+.bo-join-left{}
+.bo-join-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;display:block}
+.bo-join-title{font-family:var(--serif);font-size:clamp(34px,4.5vw,56px);font-weight:300;color:#fff;line-height:1.05;margin-bottom:1rem}
+.bo-join-title em{font-style:italic;color:var(--gold)}
+.bo-join-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2rem;font-weight:300}
+.bo-benefits{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem}
+.bo-benefit{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(201,167,108,.15);border-radius:8px;padding:1rem 1.25rem}
+.bo-benefit-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.bo-benefit-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px}
+.bo-benefit-body{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
+/* join form */
+.bo-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:2.5rem 2rem}
+.bo-form-title{font-family:var(--serif);font-size:28px;font-weight:400;color:#fff;margin-bottom:.4rem}
+.bo-form-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:1.75rem;font-weight:300}
+.bo-form{display:flex;flex-direction:column;gap:.85rem}
+.bfg{display:flex;flex-direction:column;gap:5px}
+.bfg label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500}
+.bfg input,.bfg select,.bfg textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:11px 13px;font-family:var(--sans);font-size:13px;outline:none;border-radius:4px;width:100%;transition:border-color .2s}
+.bfg input:focus,.bfg select:focus,.bfg textarea:focus{border-color:var(--gold)}
+.bfg input::placeholder,.bfg textarea::placeholder{color:rgba(255,255,255,.25)}
+.bfg select{-webkit-appearance:none;appearance:none}
+.bfg select option{background:#1a1a1a;color:#fff}
+.bfg2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:540px){.bfg2{grid-template-columns:1fr}}
+
+/* ── VIDEOS ── */
+.bo-videos{background:var(--white);padding:5rem 2rem}
+.bo-videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1280px;margin:2.5rem auto 0}
+@media(max-width:860px){.bo-videos-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bo-videos-grid{grid-template-columns:1fr}}
+.bo-video-card{border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.bo-video-thumb{position:relative;width:100%;aspect-ratio:16/9;background:var(--black);cursor:pointer;overflow:hidden}
+.bo-video-thumb iframe{width:100%;height:100%;border:none;display:block}
+.bo-video-label{padding:1rem;background:var(--white)}
+.bo-video-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:3px;display:block}
+.bo-video-name{font-size:13px;font-weight:500;color:var(--black);line-height:1.4}
+.bo-video-country{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ── WELCOME PROGRAM ── */
+.bo-welcome{background:var(--green-bg);padding:4rem 2rem}
+.bo-welcome-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:860px){.bo-welcome-inner{grid-template-columns:1fr}}
+.bo-welcome-img{width:100%;border-radius:4px;object-fit:cover;aspect-ratio:4/3;display:block}
+.bo-welcome-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:.75rem;display:block}
+.bo-welcome-title{font-family:var(--serif);font-size:clamp(30px,4vw,48px);font-weight:400;color:var(--green-dark);line-height:1.1;margin-bottom:.5rem}
+.bo-welcome-sub{font-size:15px;color:var(--green-dark);font-weight:400;margin-bottom:1.5rem;font-style:italic;font-family:var(--serif)}
+.bo-welcome-list{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem}
+.bo-welcome-list li{font-size:14px;color:#3D5A4A;line-height:1.65;font-weight:300;display:flex;align-items:flex-start;gap:.65rem}
+.bo-welcome-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.bo-welcome-actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* ── APPS ── */
+.bo-apps{background:var(--black);padding:4rem 2rem}
+.bo-apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);max-width:1280px;margin:2.5rem auto 0}
+@media(max-width:700px){.bo-apps-grid{grid-template-columns:1fr}}
+.bo-app-card{background:var(--dark);padding:3rem 2.5rem;display:flex;gap:2rem;align-items:flex-start}
+@media(max-width:540px){.bo-app-card{flex-direction:column;gap:1.5rem}}
+.bo-app-img{width:100px;height:100px;border-radius:16px;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
+.bo-app-img-placeholder{width:100px;height:100px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.bo-app-eyebrow{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.4rem;display:block}
+.bo-app-title{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;margin-bottom:.4rem}
+.bo-app-sub{font-size:13px;color:rgba(255,255,255,.4);font-weight:400;margin-bottom:.25rem;font-style:italic}
+.bo-app-list{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin:1rem 0 1.25rem}
+.bo-app-list li{font-size:12px;color:rgba(255,255,255,.45);font-weight:300;display:flex;align-items:center;gap:.5rem}
+.bo-app-list li::before{content:'·';color:var(--gold);font-size:16px}
+.bo-app-btns{display:flex;gap:.65rem;flex-wrap:wrap}
+.btn-app{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);padding:8px 16px;border-radius:25px;font-size:11px;font-weight:500;letter-spacing:.5px;text-decoration:none;transition:all .2s;font-family:var(--sans)}
+.btn-app:hover{background:rgba(255,255,255,.15);color:#fff}
+
+/* ── STATS ── */
+.bo-stats{background:var(--white);padding:4rem 2rem;border-top:1px solid var(--border)}
+.bo-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);max-width:1280px;margin:2.5rem auto 0}
+@media(max-width:860px){.bo-stats-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.bo-stats-grid{grid-template-columns:1fr 1fr}}
+.bo-stat{background:var(--white);padding:2.5rem 1.5rem;text-align:center;transition:background .2s}
+.bo-stat:hover{background:var(--bg)}
+.bo-stat-num{font-family:var(--serif);font-size:clamp(36px,4vw,52px);font-weight:300;color:var(--black);line-height:1;margin-bottom:.5rem}
+.bo-stat-num em{font-style:italic;color:var(--green)}
+.bo-stat-label{font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;max-width:160px;margin:0 auto}
+
+/* ── FAQ ── */
+.bo-faq{background:var(--bg);padding:5rem 2rem}
+.bo-faq-list{max-width:900px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.75rem}
+.bo-faq-item{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.bo-faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;user-select:none;gap:1rem;list-style:none}
+.bo-faq-q::-webkit-details-marker{display:none}
+.bo-faq-q-text{font-size:14px;font-weight:500;color:var(--black);line-height:1.4}
+.bo-faq-chevron{width:20px;height:20px;flex-shrink:0;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:10px;color:var(--muted)}
+details[open] .bo-faq-chevron{background:var(--black);border-color:var(--black);color:#fff;transform:rotate(180deg)}
+.bo-faq-a{padding:0 1.5rem 1.25rem;font-size:13px;color:var(--mid);line-height:1.8;font-weight:300;border-top:1px solid var(--border)}
+
 </style>
 </head>
 <body>
@@ -351,7 +488,7 @@ footer{background:var(--black);color:rgba(255,255,255,.4);padding:3rem 2rem}
       <a href="#products">Fragrance</a>
       <a href="#products">Makeup</a>
       <a href="#products">Wellness</a>
-      <a href="#join">Business</a>
+      <a href="#business-opportunity">Business Opportunity</a>
     </div>
   </div>
 </header>
@@ -657,6 +794,367 @@ footer{background:var(--black);color:rgba(255,255,255,.4);padding:3rem 2rem}
   </div>
 </section>
 
+
+<!-- ══════════════════════════════════════════════
+     BUSINESS OPPORTUNITY PAGE
+══════════════════════════════════════════════ -->
+
+<!-- BO HERO -->
+<div class="bo-hero r" id="business-opportunity">
+  <img class="bo-hero-img" src="https://media-cdn.oriflame.com/contentImage?externalMediaId=6d64dd37-08fb-4774-b5ff-21868286257c&name=bo-1&inputFormat=jpg&q=95" alt="Business Opportunity" onerror="this.style.display='none'">
+  <div class="bo-hero-overlay"></div>
+  <div class="bo-hero-content">
+    <span class="bo-hero-eyebrow">Oriflame Business Opportunity</span>
+    <h2 class="bo-hero-title">This Could<br><em>Be You</em></h2>
+    <p class="bo-hero-sub">With Oriflame's social selling model you can start your own beauty business as an independent Brand Partner, for a minimal fee and without any financial risk. You decide how much you do and how far you go — and I am here to support you every step of the way.</p>
+    <a href="#bo-join-form" class="btn-gold">Sign Up Now — It's Free</a>
+  </div>
+</div>
+
+<!-- DISCOVER THE OPPORTUNITY -->
+<section class="bo-discover r">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:.5rem">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500">Three reasons to join</span>
+      <h2 class="sec-title" style="margin-top:.5rem">Discover the <em>Opportunity</em></h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="bo-discover-grid" style="margin-top:3rem">
+
+      <div class="bo-card r">
+        <img class="bo-card-img" src="https://media-cdn.oriflame.com/contentImage?u=2212290705&h=115&w=410&externalMediaId=6a6e3191-8f81-4e77-a73b-5e25ac6165ad&name=3b&inputFormat=jpg" alt="Stay Relevant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="bo-card-img-placeholder" style="display:none">🌸</div>
+        <div class="bo-card-body">
+          <span class="bo-card-num">01 — Products</span>
+          <ul class="bo-card-list">
+            <li><strong>Stay Relevant:</strong> Learn about the latest trends with direct access to our high-quality Swedish beauty products combining the best in nature, science &amp; trends</li>
+            <li><strong>Make your passion profitable:</strong> Save 23% on your favourite cosmetics from Oriflame while also making 30% profit on anything you sell to customers</li>
+            <li><strong>Become a Beauty Expert:</strong> We offer certified beauty and skincare trainings on the latest and greatest in beauty</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bo-card r">
+        <img class="bo-card-img" src="https://media-cdn.oriflame.com/contentImage?u=2212290705&externalMediaId=fbb87e9c-aff7-456f-86f6-223aee523d4d&name=3c&inputFormat=jpg" alt="Earn Money" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="bo-card-img-placeholder" style="display:none">💰</div>
+        <div class="bo-card-body">
+          <span class="bo-card-num">02 — Income</span>
+          <ul class="bo-card-list">
+            <li><strong>Sell products:</strong> Go to Oriflame.com or recommend products from our catalogue to friends and family to earn a 30% profit on orders</li>
+            <li><strong>Earn more money:</strong> Invite friends to start their own Oriflame businesses — let us show you how with our free business trainings</li>
+            <li><strong>Be your own boss:</strong> Make your own work schedule, set your own working hours, work from home, work online — be independent</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bo-card r">
+        <img class="bo-card-img" src="https://media-cdn.oriflame.com/contentImage?u=2212290705&externalMediaId=703cd34e-d17b-4bb6-802d-b98d1f4eec8c&name=3d&inputFormat=jpg" alt="Travel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="bo-card-img-placeholder" style="display:none">✈️</div>
+        <div class="bo-card-body">
+          <span class="bo-card-num">03 — Lifestyle</span>
+          <ul class="bo-card-list">
+            <li><strong>Travel the World:</strong> Throughout the year, Oriflame gives you a chance to travel to exotic places to attend fun seminars, events, parties and international conferences</li>
+            <li><strong>Join Our Oriflame Family:</strong> You will always have a community that supports you and introduces you to new people and great experiences with Oriflame</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
+<div class="bo-pillars r">
+  <div class="inner">
+    <div style="text-align:center">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500">Why it works</span>
+      <h2 class="sec-title" style="margin-top:.5rem">The Oriflame <em>Advantage</em></h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="bo-pillars-grid">
+      <div class="bo-pillar r">
+        <div class="bo-pillar-icon">💸</div>
+        <h3 class="bo-pillar-title">Income &amp; Flexibility</h3>
+        <p class="bo-pillar-body">Be your own boss, work with beauty, manage your own time and earn extra income — or go full time. You choose your own pace.</p>
+      </div>
+      <div class="bo-pillar r">
+        <div class="bo-pillar-icon">🏠</div>
+        <h3 class="bo-pillar-title">Work From Home</h3>
+        <p class="bo-pillar-body">With us, you have the freedom to choose your own hours, work from where you want and enjoy more time doing the things you love.</p>
+      </div>
+      <div class="bo-pillar r">
+        <div class="bo-pillar-icon">🌍</div>
+        <h3 class="bo-pillar-title">Global Beauty Community</h3>
+        <p class="bo-pillar-body">Be a part of something bigger together with amazing people from all over the world. 3 million+ Brand Partners and growing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JOIN FORM -->
+<div class="bo-join r" id="bo-join-form">
+  <div class="bo-join-inner">
+    <div class="bo-join-left">
+      <span class="bo-join-eyebrow">Start Today</span>
+      <h2 class="bo-join-title">Join Me &amp; Start<br><em>Earning</em></h2>
+      <p class="bo-join-desc">Register through me as your sponsor — I will personally guide and support you every step of the way. Free registration, no upfront financial risk.</p>
+      <div class="bo-benefits">
+        <div class="bo-benefit"><span class="bo-benefit-icon">🏷️</span><div><div class="bo-benefit-title">Free Registration</div><div class="bo-benefit-body">Sign up at zero cost with me as your Brand Partner sponsor</div></div></div>
+        <div class="bo-benefit"><span class="bo-benefit-icon">💰</span><div><div class="bo-benefit-title">Earn up to NGN 43,360 in your first 3 months</div><div class="bo-benefit-body">Awesome Welcome Program earnings and perks for newcomers</div></div></div>
+        <div class="bo-benefit"><span class="bo-benefit-icon">📖</span><div><div class="bo-benefit-title">Starter Kit &amp; Catalogues</div><div class="bo-benefit-body">Receive everything you need — catalogues, samples &amp; training — to hit the ground running</div></div></div>
+        <div class="bo-benefit"><span class="bo-benefit-icon">🎓</span><div><div class="bo-benefit-title">Personal Mentorship from Me</div><div class="bo-benefit-body">I give you hands-on guidance, training and support at every level, for free</div></div></div>
+        <div class="bo-benefit"><span class="bo-benefit-icon">✈️</span><div><div class="bo-benefit-title">Travel &amp; Recognition Rewards</div><div class="bo-benefit-body">Top performers earn travel trips, luxury gifts and recognition at Oriflame events worldwide</div></div></div>
+      </div>
+    </div>
+    <div class="bo-form-wrap r">
+      <div class="bo-form-title">Sign Up Now</div>
+      <div class="bo-form-sub">Fill in your details and I'll contact you within 24 hours to get you started — completely free.</div>
+      <form class="bo-form" onsubmit="handleBoSub(event)">
+        <div class="bfg2">
+          <div class="bfg"><label>First Name</label><input type="text" placeholder="Your first name" required></div>
+          <div class="bfg"><label>Last Name</label><input type="text" placeholder="Your last name" required></div>
+        </div>
+        <div class="bfg"><label>Phone / WhatsApp</label><input type="tel" placeholder="080XXXXXXXX" required></div>
+        <div class="bfg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="bfg">
+          <label>State / City</label>
+          <select>
+            <option value="">Select your state…</option>
+            <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>FCT — Abuja</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option>
+          </select>
+        </div>
+        <div class="bfg">
+          <label>What are you most interested in?</label>
+          <select>
+            <option value="">Select…</option>
+            <option>Earning extra income part-time</option>
+            <option>Building a full-time business</option>
+            <option>Saving money on products I already love</option>
+            <option>Travel rewards &amp; lifestyle perks</option>
+            <option>All of the above!</option>
+          </select>
+        </div>
+        <div class="bfg">
+          <label>Any questions for me? (optional)</label>
+          <textarea placeholder="Ask me anything about the Oriflame business opportunity…" style="min-height:80px;resize:vertical;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:11px 13px;font-family:var(--sans);font-size:13px;outline:none;border-radius:4px;width:100%;transition:border-color .2s"></textarea>
+        </div>
+        <button type="submit" class="btn-gold" id="boSubBtn" style="width:100%;padding:15px;font-size:12px;letter-spacing:2px">Register Now — It's Free</button>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);text-align:center;line-height:1.5">By submitting you agree to be contacted by Oghenekaro Betty, your Oriflame Brand Partner sponsor. No spam, no pressure.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- REAL PEOPLE REAL STORIES / VIDEOS -->
+<section class="bo-videos r">
+  <div class="inner">
+    <div style="text-align:center">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500">Real People, Real Stories</span>
+      <h2 class="sec-title" style="margin-top:.5rem"><em>Oriflame Changes</em> Lives</h2>
+      <span class="sec-underline center"></span>
+      <p style="font-size:14px;color:var(--muted);margin-top:.75rem;font-weight:300">Hear directly from Brand Partners across Nigeria and the world</p>
+    </div>
+    <div class="bo-videos-grid">
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/r1ydaThoeE8" title="Why Oriflame - Onyinye" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Why Oriflame?</span>
+          <div class="bo-video-name">"I wanted an opportunity to impact other people's lives…"</div>
+          <div class="bo-video-country">Onyinye Obiora-Okoye — Nigeria 🇳🇬</div>
+        </div>
+      </div>
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/o4Sgdn5jwIY" title="Simeon Ekundayo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Oriflame Changes Lives</span>
+          <div class="bo-video-name">From zero to success — a Brand Partner's journey</div>
+          <div class="bo-video-country">Simeon Ekundayo Saidi — Nigeria 🇳🇬</div>
+        </div>
+      </div>
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/r3SLLPt9Qrw" title="Valerie Pedro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Testimonial</span>
+          <div class="bo-video-name">Valerie Pedro shares her Oriflame story</div>
+          <div class="bo-video-country">Nigeria 🇳🇬</div>
+        </div>
+      </div>
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/sV4fQvHv08k" title="Onyinye Testimonial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Testimonial</span>
+          <div class="bo-video-name">Onyinye Obiora Okoye's full testimonial</div>
+          <div class="bo-video-country">Nigeria 🇳🇬</div>
+        </div>
+      </div>
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/TDHZ63YTOGs" title="Emmanuella Ukadike" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Testimonial</span>
+          <div class="bo-video-name">Emmanuella Ukadike's Oriflame journey</div>
+          <div class="bo-video-country">Nigeria 🇳🇬</div>
+        </div>
+      </div>
+      <div class="bo-video-card r">
+        <div class="bo-video-thumb">
+          <iframe src="https://www.youtube.com/embed/gcQyLBqEVVA" title="Your Business Your Way" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="bo-video-label">
+          <span class="bo-video-tag">Your Business, Your Way</span>
+          <div class="bo-video-name">"I can work everywhere…"</div>
+          <div class="bo-video-country">Anna Shuvalova — Russia 🇷🇺</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME PROGRAM -->
+<div class="bo-welcome r">
+  <div class="bo-welcome-inner inner">
+    <div>
+      <img class="bo-welcome-img" src="https://media-cdn.oriflame.com/contentImage?externalMediaId=e48981e0-98a9-451b-be62-eac130fbba90&name=shutterstock_2186931015&inputFormat=jpg&imageFormat=Png&q=90" alt="Welcome Program" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <span class="bo-welcome-eyebrow">New to Oriflame?</span>
+      <h2 class="bo-welcome-title">Welcome<br>Program</h2>
+      <p class="bo-welcome-sub">Special perks for Oriflame newcomers</p>
+      <ul class="bo-welcome-list">
+        <li>Free registration with any Brand Partner</li>
+        <li>Awesome earnings up to <strong>NGN 43,360</strong> in your first 3 months</li>
+        <li>Enjoy amazing benefits and bonuses in your first three months</li>
+        <li>Access to exclusive newcomer trainings and support from me personally</li>
+        <li>Starter kit with catalogues, product samples and everything you need</li>
+      </ul>
+      <div class="bo-welcome-actions">
+        <a href="#bo-join-form" class="btn-dark">Join Oriflame</a>
+        <a href="#contact" class="btn-green">Talk to Betty First</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPS -->
+<div class="bo-apps r">
+  <div class="inner">
+    <div style="text-align:center">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500">Tools for your business</span>
+      <h2 class="sec-title" style="color:#fff;margin-top:.5rem">Oriflame <em>Apps</em></h2>
+      <span class="sec-underline center" style="background:#fff"></span>
+    </div>
+    <div class="bo-apps-grid">
+      <div class="bo-app-card">
+        <div class="bo-app-img-placeholder">🛍️</div>
+        <div>
+          <span class="bo-app-eyebrow">Shopping</span>
+          <div class="bo-app-title">Oriflame App</div>
+          <div class="bo-app-sub">All in one place</div>
+          <ul class="bo-app-list">
+            <li>Browse products &amp; offers</li>
+            <li>Place orders instantly</li>
+            <li>Inspiring articles and videos</li>
+          </ul>
+          <div class="bo-app-btns">
+            <a href="https://apps.apple.com/app/oriflame/id1553442930" target="_blank" class="btn-app">🍎 App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.oriflame.mv7.app" target="_blank" class="btn-app">▶ Google Play</a>
+          </div>
+        </div>
+      </div>
+      <div class="bo-app-card">
+        <div class="bo-app-img-placeholder">📊</div>
+        <div>
+          <span class="bo-app-eyebrow">Business</span>
+          <div class="bo-app-title">Business App</div>
+          <div class="bo-app-sub">Stay on top</div>
+          <ul class="bo-app-list">
+            <li>Activate and manage your team</li>
+            <li>Track your network's progress with real-time data</li>
+            <li>Get answers to important business questions</li>
+          </ul>
+          <div class="bo-app-btns">
+            <a href="https://itunes.apple.com/us/app/oriflame-business/id905364143" target="_blank" class="btn-app">🍎 App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.norbsoft.oriflame.businessapp" target="_blank" class="btn-app">▶ Google Play</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORIFLAME BY THE NUMBERS -->
+<section class="bo-stats r">
+  <div class="inner">
+    <div style="text-align:center">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500">A brand you can trust</span>
+      <h2 class="sec-title" style="margin-top:.5rem">Oriflame by the <em>Numbers</em></h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="bo-stats-grid">
+      <div class="bo-stat r"><div class="bo-stat-num"><em>60</em>+</div><div class="bo-stat-label">Countries worldwide where Oriflame is present</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>3</em>M</div><div class="bo-stat-label">Independent Brand Partners in our global family</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>1967</em></div><div class="bo-stat-label">Over 55 years empowering people and their dreams</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>100</em>+</div><div class="bo-stat-label">Scientists in global R&amp;D Centres developing advanced formulations</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>1.2</em>M</div><div class="bo-stat-label">Oriflame products sold every single day, worldwide</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>100</em>%</div><div class="bo-stat-label">Natural extracts — always 100% natural and GMO-free</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num">€<em>1.1</em>M</div><div class="bo-stat-label">Raised for charity since 2015</div></div>
+      <div class="bo-stat r"><div class="bo-stat-num"><em>10</em>K+</div><div class="bo-stat-label">Oriflame Leaders who travel abroad with us every year</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bo-faq r">
+  <div class="inner">
+    <div style="text-align:center">
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500">Got questions?</span>
+      <h2 class="sec-title" style="margin-top:.5rem">Frequently Asked <em>Questions</em></h2>
+      <span class="sec-underline center"></span>
+    </div>
+    <div class="bo-faq-list">
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">What are the requirements to become an Oriflame Brand Partner?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">Everyone is welcome to join Oriflame as a Brand Partner. People from all backgrounds have been successful with us. We provide a rare opportunity to start your own business, where the only investment needed is your commitment and passion. There are no educational requirements, no experience needed, and no minimum sales targets.</div>
+      </details>
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">How can I make money with Oriflame?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">As a Brand Partner you are entitled to order products at a reduced price — saving 23% for yourself. If you decide to sell products to your customers, you can use the recommended catalogue price and earn a 30% profit on every order. If you decide to invite others to join Oriflame who are also buying products, you can also benefit from their purchases too.</div>
+      </details>
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">How do I get started?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">As a new Brand Partner you will have me as your coach — guiding and assisting you from day one. I will introduce you to Oriflame and help you with all the necessary information you need in the beginning. You can also choose to purchase a few recommended items like catalogues and samples to show to others or try yourself to become familiar with our product portfolio.</div>
+      </details>
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">How can I join?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">It's simple! Fill in the sign-up form above and I will personally contact you within 24 hours to walk you through everything. Alternatively, send me a message on WhatsApp and we can get you registered right away. Registration is completely free.</div>
+      </details>
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">What is it like being an Oriflame Brand Partner?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">As a Brand Partner you can choose to save money on beauty products you buy for yourself, earn money on your own sales, or invite others to join your team and earn money on total group sales. Many of our Brand Partners have made a successful full-time career, whilst others sell in their spare time to earn extra income. Whichever you prefer, you are welcome and we will assist you along the way.</div>
+      </details>
+      <details class="bo-faq-item">
+        <summary class="bo-faq-q"><span class="bo-faq-q-text">How much time do I have to spend?</span><span class="bo-faq-chevron">▼</span></summary>
+        <div class="bo-faq-a">You decide yourself when and how much you want to work. Whether you want to dedicate yourself full time or want to make some extra money during your spare time, it is completely up to you. Being an Oriflame Brand Partner means flexible working hours, so you can invest your time in a way that suits your lifestyle.</div>
+      </details>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:1.5rem;font-weight:300">Still have questions? I'd love to chat with you directly.</p>
+      <a href="#bo-join-form" class="btn-dark" style="margin-right:.75rem">Sign Up Now</a>
+      <a href="#contact" class="btn-outline-sm">Contact Betty</a>
+    </div>
+  </div>
+</section>
+
+
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -731,6 +1229,21 @@ function handleSub(e) {
     e.target.reset();
   }, 3500);
 }
+
+function handleBoSub(e) {
+  e.preventDefault();
+  var b = document.getElementById('boSubBtn');
+  b.textContent = '✓ Registered! I will contact you soon.';
+  b.style.background = '#27ae60';
+  b.disabled = true;
+  setTimeout(function() {
+    b.textContent = "Register Now — It's Free";
+    b.style.background = '';
+    b.disabled = false;
+    e.target.reset();
+  }, 4000);
+}
+
 </script>
 </body>
 </html>
