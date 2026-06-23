@@ -17,22 +17,36 @@
 
 <div data-include="partials/header.html"></div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-img">
-    <img id="heroImg" src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90" alt="Oriflame products" onerror="this.parentElement.style.background='#222'">
-  </div>
-  <div class="hero-content" id="heroSlideArea">
-    <div class="hero-content-inner">
-      <p class="hero-eyebrow" id="hSlideEye">Divine</p>
-      <h1 class="hero-title" id="hSlideTitle">Glam Feminine scent to<br><em>own the night…</em></h1>
-      <a href="contact.html" class="btn-dark">Shop Now</a>
-      <div class="hero-dots">
-        <button class="hero-dot on" onclick="heroGo(0)"></button>
-        <button class="hero-dot" onclick="heroGo(1)"></button>
-        <button class="hero-dot" onclick="heroGo(2)"></button>
-      </div>
+<!-- HERO SLIDER -->
+<div class="o-hero-slider" id="heroSlider">
+  <div class="o-hero-slide active" style="background:linear-gradient(135deg,#f5f5f5 0%,#e1f4eb 100%)">
+    <div class="o-hero-slide-inner">
+      <div class="o-hero-slide-eyebrow">Divine</div>
+      <h2 class="o-hero-slide-title">Glam Feminine Scent to<br>Own the Night</h2>
+      <p class="o-hero-slide-sub">Discover Dark Velvet Eau De Parfum — an addictive floral rose fragrance designed for unforgettable evenings.</p>
+      <a href="contact.html" class="o-btn o-btn-primary">Shop Now</a>
     </div>
+  </div>
+  <div class="o-hero-slide" style="background:linear-gradient(135deg,#e1f4eb 0%,#f5f5f5 100%)">
+    <div class="o-hero-slide-inner">
+      <div class="o-hero-slide-eyebrow">Glacier</div>
+      <h2 class="o-hero-slide-title">Unlock Your<br>Spark</h2>
+      <p class="o-hero-slide-sub">Extreme Eau De Toilette — powerful masculine fragrance with frosted citrus and black stone accord.</p>
+      <a href="contact.html" class="o-btn o-btn-primary">Shop Now</a>
+    </div>
+  </div>
+  <div class="o-hero-slide" style="background:linear-gradient(135deg,#f5f5f5 0%,#e8f0e8 100%)">
+    <div class="o-hero-slide-inner">
+      <div class="o-hero-slide-eyebrow">Giordani Gold</div>
+      <h2 class="o-hero-slide-title">Deodorants That Smell<br>SO Good!</h2>
+      <p class="o-hero-slide-sub">Miss Giordani Anti-perspirant Roll-On — perfumed protection with a luxurious scent that lasts.</p>
+      <a href="contact.html" class="o-btn o-btn-primary">Shop Now</a>
+    </div>
+  </div>
+  <div class="o-hero-dots">
+    <button class="o-hero-dot on" onclick="heroGo(0)"></button>
+    <button class="o-hero-dot" onclick="heroGo(1)"></button>
+    <button class="o-hero-dot" onclick="heroGo(2)"></button>
   </div>
 </div>
 
@@ -77,7 +91,7 @@
         <div class="icon-price">₦9,490.00</div>
       </div>
     </div>
-    <div class="icons-view-all r"><a href="contact.html" class="btn-outline-sm">View All Products</a></div>
+    <div class="icons-view-all r"><a href="products.html" class="o-btn o-btn-outline o-btn-sm">View All Products</a></div>
   </div>
 </section>
 
@@ -90,92 +104,120 @@
     <div class="split-content-inner">
       <h2>Find Your Ideal Routine!</h2>
       <p>Every skin is unique. Message me directly and I'll help you find the perfect Oriflame routine tailored to your skin type, concerns, and goals — completely free.</p>
-      <a href="contact.html" class="btn-dark">Get My Routine</a>
+      <a href="contact.html" class="o-btn o-btn-primary">Get My Routine</a>
     </div>
   </div>
 </div>
 
 <!-- FEATURED PRODUCTS -->
-<section class="products-section r" id="products">
-  <div class="inner">
-    <div class="prod-section-title">
-      <h2>The Art of <em style="font-family:var(--serif);font-style:italic">Nurturing Yourself</em></h2>
+<section class="o-section" id="products">
+  <div class="o-section-inner">
+    <div class="o-section-header">
+      <h2 class="o-section-title">The Art of <em style="font-style:italic">Nurturing Yourself</em></h2>
       <a href="products.html">View All Products →</a>
     </div>
-    <div class="prods-grid">
-      <div class="prod-card">
-        <span class="prod-tag new-tag">New</span>
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90" alt="Divine Dark Velvet" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌹</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Divine</div>
-        <div class="prod-name">Dark Velvet Eau De Parfum</div>
-        <div class="prod-desc-sm">Channel diva energy with this addictive floral rose perfume for night.</div>
-        <div class="prod-price">₦46,500.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <span class="prod-tag sale">Sale</span>
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90" alt="Glacier Extreme" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍃</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Glacier</div>
-        <div class="prod-name">Extreme Eau De Toilette</div>
-        <div class="prod-desc-sm">Powerful masculine fragrance with frosted citrus and black stone accord.</div>
-        <div class="prod-price"><s>₦38,000</s> ₦32,500.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90" alt="Miss Giordani Deo" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌸</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Giordani Gold</div>
-        <div class="prod-name">Miss Giordani Anti-perspirant Roll-On</div>
-        <div class="prod-desc-sm">Perfumed antiperspirant with lasting protection and a luxurious scent.</div>
-        <div class="prod-price">₦14,990.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <span class="prod-tag hit">Bestseller</span>
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47511%2f47511_1.png&MediaId=19156172&Version=1&q=90" alt="Essenza Parfum" onerror="this.parentElement.innerHTML='<span style=font-size:64px>💜</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Giordani Gold</div>
-        <div class="prod-name">Essenza Parfum</div>
-        <div class="prod-desc-sm">White floral perfume with orange blossom, citrus and warm woody notes.</div>
-        <div class="prod-price">₦89,990.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46968%2f46968_1.png&MediaId=19554510&Version=3&q=90" alt="Milk Honey Cream" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍯</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Milk &amp; Honey Gold</div>
-        <div class="prod-name">Nourishing Hand &amp; Body Cream</div>
-        <div class="prod-desc-sm">Rich moisturising cream with organically sourced milk and honey extracts.</div>
-        <div class="prod-price"><s>₦26,000</s> ₦22,390.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46989%2f46989_1.png&MediaId=19550468&Version=3&q=90" alt="Sweet Mandarin Balm" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🍊</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Tender Care</div>
-        <div class="prod-name">Sweet Mandarin Multi-purpose Balm</div>
-        <div class="prod-desc-sm">Deeply hydrates, nourishes and protects dry lips and skin all over the body.</div>
-        <div class="prod-price">₦9,490.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
-      <div class="prod-card">
-        <div class="prod-actions"><span class="icon-action">♡</span><a href="contact.html" class="icon-action" style="text-decoration:none">🛒</a></div>
-        <div class="prod-img-wrap"><img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f12760%2f12760_1.png&MediaId=20233595&Version=1&q=90" alt="Natural Balm" onerror="this.parentElement.innerHTML='<span style=font-size:64px>🌿</span>'"></div>
-        <div class="prod-stars">★★★★★</div>
-        <div class="prod-coll">Tender Care</div>
-        <div class="prod-name">Natural Multi-purpose Balm</div>
-        <div class="prod-desc-sm">The iconic multi-purpose balm. Hydrates, nourishes and protects dry skin.</div>
-        <div class="prod-price">₦9,490.00</div>
-        <a href="contact.html" class="prod-order">Order Now</a>
-      </div>
+    <div class="o-prod-grid">
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90" alt="Dark Velvet" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+          <span class="o-card-tag new">New</span>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(1,876)</span></div>
+        <div class="o-card-brand">Divine</div>
+        <div class="o-card-name">Dark Velvet Eau De Parfum</div>
+        <div class="o-card-price">₦46,500.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90" alt="Glacier Extreme" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+          <span class="o-card-tag sale">Sale</span>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(2,543)</span></div>
+        <div class="o-card-brand">Glacier</div>
+        <div class="o-card-name">Extreme Eau De Toilette</div>
+        <div class="o-card-price"><s>₦38,000</s> ₦32,500.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90" alt="Miss Giordani Deo" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(4,112)</span></div>
+        <div class="o-card-brand">Giordani Gold</div>
+        <div class="o-card-name">Miss Giordani Anti-perspirant Roll-On</div>
+        <div class="o-card-price">₦14,990.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47511%2f47511_1.png&MediaId=19156172&Version=1&q=90" alt="Essenza Parfum" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+          <span class="o-card-tag bestseller">Bestseller</span>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(3,088)</span></div>
+        <div class="o-card-brand">Giordani Gold</div>
+        <div class="o-card-name">Essenza Parfum</div>
+        <div class="o-card-price">₦89,990.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46968%2f46968_1.png&MediaId=19554510&Version=3&q=90" alt="Milk Honey Cream" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(5,228)</span></div>
+        <div class="o-card-brand">Milk &amp; Honey Gold</div>
+        <div class="o-card-name">Nourishing Hand &amp; Body Cream</div>
+        <div class="o-card-price"><s>₦26,000</s> ₦22,390.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46989%2f46989_1.png&MediaId=19550468&Version=3&q=90" alt="Sweet Mandarin Balm" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(3,236)</span></div>
+        <div class="o-card-brand">Tender Care</div>
+        <div class="o-card-name">Sweet Mandarin Multi-purpose Balm</div>
+        <div class="o-card-price">₦9,490.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
+      <a href="contact.html" class="o-card">
+        <div class="o-card-img-wrap">
+          <img src="https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f12760%2f12760_1.png&MediaId=20233595&Version=1&q=90" alt="Natural Balm" loading="lazy" onerror="this.parentElement.style.background='#f5f5f5'">
+          <div class="o-card-badges">
+            <span class="o-card-badge">♡</span>
+            <span class="o-card-badge">🛒</span>
+          </div>
+        </div>
+        <div class="o-card-rating">♥♥♥♥♥ <span>(6,157)</span></div>
+        <div class="o-card-brand">Tender Care</div>
+        <div class="o-card-name">Natural Multi-purpose Balm</div>
+        <div class="o-card-price">₦9,490.00</div>
+        <span class="o-card-order">Order Now</span>
+      </a>
     </div>
   </div>
 </section>
@@ -188,7 +230,7 @@
       <div class="value-card"><span class="value-icon">💼</span><h3 class="value-title">Be your own boss</h3><p class="value-body">Make your own schedule, work from home, work online — be completely independent.</p></div>
       <div class="value-card"><span class="value-icon">💰</span><h3 class="value-title">Share the love &amp; earn more</h3><p class="value-body">Invite friends to start their own Oriflame business and make 30% profit on every sale.</p></div>
     </div>
-    <div class="values-cta r"><a href="business.html" class="btn-green">Join the Oriflame Community</a></div>
+    <div class="values-cta r"><a href="business.html" class="o-btn o-btn-primary">Join the Oriflame Community</a></div>
   </div>
 </div>
 

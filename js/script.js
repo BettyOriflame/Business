@@ -37,43 +37,31 @@
     });
   }
 
-  /* ── HERO SLIDES ── */
-  var heroSlides = [
-    {eye:'Divine', title:'Glam Feminine scent to<br><em>own the night&#8230;</em>', bg:'#D4E8D8', tc:'#1A3A2A', ec:'#2D7A4F', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f46801%2f46801_1.png&MediaId=20242671&Version=1&q=90'},
-    {eye:'Glacier', title:'Unlock Your <em>Spark&#8230;</em>', bg:'#D8E8F0', tc:'#1A2A3A', ec:'#1A5A7A', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f40667%2f40667_1.png&MediaId=19083902&Version=2&q=90'},
-    {eye:'Giordani Gold', title:'Deodorants that smell<br><em>SO good!</em>', bg:'#F0EBD8', tc:'#3A2A1A', ec:'#8B6533', img:'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2fProducts%2f47759%2f47759_1.png&MediaId=20378989&Version=1&q=90'}
-  ];
+  /* ── HERO SLIDER ── */
   var hCur = 0;
   var heroTimer;
 
   function autoAdvance() {
-    heroGo((hCur + 1) % heroSlides.length);
+    heroGo((hCur + 1) % 3);
   }
 
   function heroGo(n) {
     hCur = n;
-    var s = heroSlides[n];
-    var eyeEl = document.getElementById('hSlideEye');
-    var titleEl = document.getElementById('hSlideTitle');
-    var areaEl = document.getElementById('heroSlideArea');
-    var imgEl = document.getElementById('heroImg');
-    if (!eyeEl || !titleEl || !areaEl) return;
-    eyeEl.textContent = s.eye;
-    titleEl.innerHTML = s.title;
-    areaEl.style.background = s.bg;
-    titleEl.style.color = s.tc;
-    document.querySelector('.hero-eyebrow').style.color = s.ec;
-    if (imgEl) imgEl.src = s.img;
-    document.querySelectorAll('.hero-dot').forEach(function(d, i) {
+    var slides = document.querySelectorAll('.o-hero-slide');
+    var dots = document.querySelectorAll('.o-hero-dot');
+    slides.forEach(function(s, i) {
+      s.classList.toggle('active', i === n);
+    });
+    dots.forEach(function(d, i) {
       d.classList.toggle('on', i === n);
     });
     clearInterval(heroTimer);
-    heroTimer = setInterval(autoAdvance, 4500);
+    heroTimer = setInterval(autoAdvance, 5000);
   }
 
   function initHero() {
-    if (!document.getElementById('heroSlideArea')) return;
-    heroTimer = setInterval(autoAdvance, 4500);
+    if (!document.querySelector('.o-hero-slider')) return;
+    heroTimer = setInterval(autoAdvance, 5000);
     window.heroGo = heroGo;
   }
 
@@ -84,7 +72,7 @@
         if (entry.isIntersecting) entry.target.classList.add('in');
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.r').forEach(function(el) { obs.observe(el); });
+    document.querySelectorAll('.r, .o-section, .o-prod-grid').forEach(function(el) { obs.observe(el); });
   }
 
   /* ── FORM HANDLERS ── */
