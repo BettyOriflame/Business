@@ -210,10 +210,103 @@
     window.open(whatsappUrl, '_blank', 'noopener');
   }
 
+  /* ── SEARCH ── */
+  function setupSearch() {
+    var input = document.querySelector('.o-hdr-search input');
+    if (!input) return;
+    input.addEventListener('keydown', function(e) {
+      if (e.key !== 'Enter') return;
+      var q = input.value.trim();
+      if (!q) return;
+      var isProducts = document.body.getAttribute('data-page') === 'products';
+      if (isProducts) {
+        filterProducts(q);
+      } else {
+        window.location.href = 'products.html?q=' + encodeURIComponent(q);
+      }
+    });
+  }
+
+  /* ── CATEGORY FILTER ── */
+  function setupCategoryFilter() {
+    var hash = window.location.hash;
+    if (!hash || hash === '#all' || hash === '#') return;
+    var sections = document.querySelectorAll('.o-section[id]');
+    if (!sections.length) return;
+    var match = hash.replace('#cat-', '');
+    var hero = document.querySelector('.o-hero h1');
+    var titles = { skincare:'Skincare', fragrance:'Fragrance', makeup:'Make-Up', 'bath-body':'Bath & Body', hair:'Hair', nutrition:'Nutrition & Wellness', men:'Men' };
+    sections.forEach(function(s) {
+      var id = s.id.replace('cat-', '');
+      if (id === match) {
+        s.style.display = '';
+        if (hero) hero.innerHTML = '<em>' + (titles[match] || match) + ' Products</em>';
+      } else {
+        s.style.display = 'none';
+      }
+    });
+    var sub = document.querySelector('.o-hero p');
+    if (sub) sub.textContent = 'Browse our curated ' + (titles[match] || match) + ' collection. 100% authentic, Nigeria-wide delivery.';
+    var showAll = document.getElementById('cat-show-all');
+    if (showAll) showAll.style.display = '';
+  }
+
+  /* ── PRODUCT SEARCH FILTER ── */
+  function filterProducts(q) {
+    q = q.toLowerCase();
+    var cards = document.querySelectorAll('.o-card');
+    var anyVisible = false;
+    cards.forEach(function(c) {
+      var name = (c.querySelector('.o-card-name') || {}).textContent || '';
+      var brand = (c.querySelector('.o-card-brand') || {}).textContent || '';
+      var match = name.toLowerCase().indexOf(q) !== -1 || brand.toLowerCase().indexOf(q) !== -1;
+      c.style.display = match ? '' : 'none';
+      if (match) anyVisible = true;
+    });
+    var sections = document.querySelectorAll('.o-section[id]');
+    sections.forEach(function(s) {
+      var hasVisible = Array.from(s.querySelectorAll('.o-card')).some(function(c) { return c.style.display !== 'none'; });
+      s.style.display = hasVisible ? '' : 'none';
+    });
+    var noResults = document.getElementById('search-no-results');
+    if (!anyVisible) {
+      if (!noResults) {
+        noResults = document.createElement('div');
+        noResults.id = 'search-no-results';
+        noResults.style.cssText = 'text-align:center;padding:4rem 2rem;color:var(--o-muted);font-size:16px';
+        noResults.textContent = 'No products found for "' + q + '". Try a different search or contact Betty on WhatsApp for help.';
+        var container = document.querySelector('.o-section') || document.body;
+        container.parentNode.insertBefore(noResults, container.nextSibling);
+      }
+      noResults.style.display = '';
+    } else if (noResults) {
+      noResults.style.display = 'none';
+    }
+  }
+
+  /* ── READ URL SEARCH PARAM ── */
+  function applyUrlSearch() {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+      var input = document.querySelector('.o-hdr-search input');
+      if (input) input.value = q;
+      filterProducts(q);
+    }
+  }
+
   /* ── BOOT ── */
   document.addEventListener('DOMContentLoaded', function() {
-    loadIncludes();
+    setupCategoryFilter();
+    applyUrlSearch();
     setupForms();
+    loadIncludes();
+    var pollTimer = setInterval(function() {
+      if (document.querySelector('.o-hdr-search input')) {
+        clearInterval(pollTimer);
+        setupSearch();
+      }
+    }, 100);
   });
 
 })();
