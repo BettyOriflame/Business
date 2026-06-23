@@ -111,23 +111,48 @@
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
-      var res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        btn.textContent = '✓ Sent!';
-        btn.style.background = '#27ae60';
-        setTimeout(function() {
-          btn.textContent = 'Send Order Request';
-          btn.style.background = '';
-          btn.disabled = false;
-          form.reset();
-        }, 3500);
-      } else {
-        throw new Error('Send failed');
-      }
+      var formData = new FormData(form);
+      var name = formData.get('name') || '';
+      var phone = formData.get('phone') || '';
+      var email = formData.get('email') || '';
+      var location = formData.get('location') || '';
+      var interest = formData.get('interest') || '';
+      var message = formData.get('message') || '';
+
+      var interestLabels = {
+        'buying': 'Buying Products',
+        'skincare': 'Skincare',
+        'fragrance': 'Fragrance & Perfume',
+        'makeup': 'Makeup',
+        'haircare': 'Haircare',
+        'wellness': 'Wellness & Nutrition',
+        'mens': "Men's Products",
+        'gifts': 'Gift Sets',
+        'join': 'Joining as a Distributor',
+        'enquiry': 'General Enquiry'
+      };
+
+      var msg = '🛍️ *New Order / Enquiry*\n\n';
+      msg += '*Name:* ' + name + '\n';
+      msg += '*Phone:* ' + phone + '\n';
+      if (email) msg += '*Email:* ' + email + '\n';
+      if (location) msg += '*Location:* ' + location + '\n';
+      if (interest) msg += '*Interest:* ' + (interestLabels[interest] || interest) + '\n';
+      if (message) msg += '*Details:* ' + message + '\n';
+      msg += '\n_Sent from Oghenekaro Betty Oriflame website_';
+
+      var encodedMsg = encodeURIComponent(msg);
+      var whatsappUrl = 'https://wa.me/2348063018798?text=' + encodedMsg;
+      window.open(whatsappUrl, '_blank', 'noopener');
+
+      btn.textContent = '✓ Sent!';
+      btn.style.background = '#27ae60';
+      setTimeout(function() {
+        btn.textContent = 'Send Order Request';
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 3500);
     } catch (err) {
       btn.textContent = '✗ Failed — try again';
       btn.style.background = '#c0392b';
@@ -146,24 +171,15 @@
     btn.disabled = true;
     try {
       var formData = new FormData(form);
-      var res = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        btn.textContent = '✓ Registered! I will contact you soon.';
-        btn.style.background = '#27ae60';
-        sendToWhatsApp(formData);
-        setTimeout(function() {
-          btn.textContent = "Register Now — It's Free";
-          btn.style.background = '';
-          btn.disabled = false;
-          form.reset();
-        }, 4000);
-      } else {
-        throw new Error('Submit failed');
-      }
+      sendToWhatsApp(formData);
+      btn.textContent = '✓ Registered! I will contact you soon.';
+      btn.style.background = '#27ae60';
+      setTimeout(function() {
+        btn.textContent = "Register Now — It's Free";
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 4000);
     } catch (err) {
       btn.textContent = '✗ Failed — try again';
       btn.style.background = '#c0392b';
