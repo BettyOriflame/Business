@@ -222,7 +222,7 @@
       if (isProducts) {
         filterProducts(q);
       } else {
-        window.location.href = '/products?q=' + encodeURIComponent(q);
+        window.location.href = 'products.html?q=' + encodeURIComponent(q);
       }
     });
   }
