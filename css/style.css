@@ -286,6 +286,7 @@ section{padding:4rem 2rem}
 .fab-main:hover + .fab-tooltip,.fab-tooltip:hover{opacity:1;transform:translateX(0);pointer-events:auto}
 .fab-call{width:44px;height:44px;border-radius:50%;background:var(--gold);box-shadow:0 2px 12px rgba(201,167,108,.3);display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:18px;transition:all .2s}
 .fab-call:hover{background:var(--gold-lt);transform:scale(1.05)}
+.fab-call:hover + .call-tt,.call-tt:hover{opacity:1;transform:translateX(0);pointer-events:auto}
 @media(max-width:640px){
   .fab-whatsapp{bottom:16px;right:16px}
   .fab-main{width:50px;height:50px}
