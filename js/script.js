@@ -227,37 +227,6 @@
     });
   }
 
-  /* ── CATEGORY FILTER ── */
-  function setupCategoryFilter() {
-    var cat = null;
-    var path = window.location.pathname;
-    var hash = window.location.hash;
-    var m = path.match(/\/products\/cat-(.+)/);
-    if (m) {
-      cat = m[1];
-    } else if (hash && hash !== '#all' && hash !== '#') {
-      cat = hash.replace('#cat-', '');
-    }
-    if (!cat) return;
-    var sections = document.querySelectorAll('.o-section[id]');
-    if (!sections.length) return;
-    var hero = document.querySelector('.o-hero h1');
-    var titles = { skincare:'Skincare', fragrance:'Fragrance', makeup:'Make-Up', 'bath-body':'Bath & Body', hair:'Hair', nutrition:'Nutrition & Wellness', men:'Men' };
-    sections.forEach(function(s) {
-      var id = s.id.replace('cat-', '');
-      if (id === cat) {
-        s.style.display = '';
-        if (hero) hero.innerHTML = '<em>' + (titles[cat] || cat) + ' Products</em>';
-      } else {
-        s.style.display = 'none';
-      }
-    });
-    var sub = document.querySelector('.o-hero p');
-    if (sub) sub.textContent = 'Browse our curated ' + (titles[cat] || cat) + ' collection. 100% authentic, Nigeria-wide delivery.';
-    var showAll = document.getElementById('cat-show-all');
-    if (showAll) showAll.style.display = '';
-  }
-
   /* ── PRODUCT SEARCH FILTER ── */
   function filterProducts(q) {
     q = q.toLowerCase();
@@ -304,7 +273,6 @@
 
   /* ── BOOT ── */
   document.addEventListener('DOMContentLoaded', function() {
-    setupCategoryFilter();
     applyUrlSearch();
     setupForms();
     loadIncludes();
