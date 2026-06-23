@@ -100,7 +100,7 @@ body{font-family:var(--sans);background:var(--white);color:var(--o-text);line-he
 /* ── PROFILE BANNER ── */
 .profile-banner{background:var(--dark);padding:0;overflow:hidden}
 .profile-banner-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;min-height:420px}
-.profile-photo-side{position:relative;overflow:hidden}
+.profile-photo-side{position:relative;overflow:hidden;height:100%}
 .profile-photo-side img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.92) contrast(1.05)}
 .profile-photo-side::after{content:'';position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to right,transparent,var(--dark))}
 .profile-info-side{padding:3.5rem 4rem 3.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
