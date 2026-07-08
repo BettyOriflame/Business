@@ -58,8 +58,8 @@ ul{list-style:none}
 @media(max-width:599px){.o-cat-circles-grid{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
 .o-cat-circle{display:flex;flex-direction:column;align-items:center;gap:1rem;text-decoration:none;color:#333;cursor:pointer;transition:opacity .25s}
 .o-cat-circle:hover{opacity:.8}
-.o-cat-circle-img{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#e5e5e5}
-.o-cat-circle-img img{width:100%;height:100%;object-fit:cover}
+.o-cat-circle-img{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#f0f0f0;display:flex;align-items:center;justify-content:center;padding:22%}
+.o-cat-circle-img img,.o-cat-circle-img svg{width:100%;height:100%;display:block;object-fit:contain}
 .o-cat-circle-label{font-size:1rem;text-transform:uppercase;letter-spacing:1.2px;text-align:center;line-height:1.4;color:#666}
 
 /* Buttons */
@@ -101,14 +101,16 @@ ul{list-style:none}
 .o-card-price{font-size:1.4rem;font-weight:700;color:#333}
 .o-card-price s{font-size:1.2rem;color:#666;font-weight:400;margin-right:4px}
 .o-card-rating{display:flex;align-items:center;gap:4px;font-size:1.2rem;color:#666;background:#f5f5f5;padding:4px 12px;border-radius:0 0 6px 6px;margin-top:auto}
-.o-card-rating-stars{color:#333;font-size:1.3rem}
+.o-card-rating-stars{color:#333;font-size:1.3rem;letter-spacing:1px}
 .o-card-rating-count{font-size:1.1rem;font-weight:700;color:#666}
 
 /* Product Grid */
-.o-prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;background:#e5e5e5}
-@media(min-width:768px){.o-prod-grid{grid-template-columns:repeat(4,1fr)}}
-.o-prod-grid .o-card{width:auto;background:#fff;border:1px solid #e5e5e5;border-radius:0}
+.o-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e5e5e5}
+@media(max-width:899px){.o-prod-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:599px){.o-prod-grid{grid-template-columns:repeat(1,1fr)}}
+.o-prod-grid .o-card{width:100%;background:#fff;border:1px solid #e5e5e5;border-radius:0}
 .o-prod-grid .o-card:hover{background:#fafafa}
+.o-prod-grid:empty{display:none}
 
 /* Section */
 .o-section{padding:5rem 2rem}
