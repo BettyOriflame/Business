@@ -1,0 +1,13 @@
+{
+  "name": "okarobetty-oriflame",
+  "version": "1.0.0",
+  "description": "Oghenekaro Betty - Oriflame Distributor Website",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "@magicuidesign/mcp": "^2.0.0",
+    "ui-ux-pro-max-cli": "^2.10.2"
+  }
+}
