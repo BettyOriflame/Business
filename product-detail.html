@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Product · Oghenekaro Betty Oriflame</title>
+<meta name="description" content="View product details, pricing, and description for Oriflame products. Order via WhatsApp for nationwide delivery in Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+html { font-size: 62.5%; }
+body { font-family: 'Inter', sans-serif; color: #333; background: #fff; margin: 0; }
+
+.pd-wrap { max-width: 1245px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+@media (max-width: 899px) { .pd-wrap { grid-template-columns: 1fr; gap: 3rem; } }
+
+.pd-gallery { position: relative; }
+.pd-main-img { width: 100%; aspect-ratio: 1; background: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.pd-main-img img { width: 100%; height: 100%; object-fit: contain; }
+.pd-thumbs { display: flex; gap: 8px; margin-top: 12px; }
+.pd-thumb { width: 64px; height: 64px; border: 1px solid #e5e5e5; cursor: pointer; padding: 4px; }
+.pd-thumb.active { border-color: #333; }
+.pd-thumb img { width: 100%; height: 100%; object-fit: contain; }
+
+.pd-brand { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; color: #666; margin-bottom: 4px; }
+.pd-name { font-size: 2.4rem; font-weight: 400; color: #333; line-height: 1.2; margin-bottom: 1rem; }
+.pd-price { font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 0.5rem; }
+.pd-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 2rem; }
+.pd-stars { color: #333; font-size: 1.6rem; }
+.pd-review-count { font-size: 1.3rem; color: #666; }
+
+.pd-section { margin-bottom: 3rem; }
+.pd-section-title { font-size: 1.4rem; font-weight: 600; color: #333; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
+.pd-desc { font-size: 1.4rem; color: #666; line-height: 1.8; }
+.pd-detail-row { display: flex; padding: 1rem 0; border-bottom: 1px solid #e5e5e5; font-size: 1.3rem; }
+.pd-detail-label { width: 160px; color: #666; font-weight: 500; flex-shrink: 0; }
+.pd-detail-value { color: #333; }
+
+.pd-order { display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
+
+.pd-more { margin-top: 5rem; }
+.pd-more h2 { font-size: 1.8rem; font-weight: 400; color: #333; margin-bottom: 2rem; }
+.pd-more-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #e5e5e5; }
+@media (max-width: 768px) { .pd-more-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.pd-loading { text-align: center; padding: 8rem 2rem; font-size: 1.6rem; color: #666; }
+.pd-error { text-align: center; padding: 8rem 2rem; }
+.pd-error h2 { font-size: 2rem; color: #333; margin-bottom: 1rem; }
+.pd-error p { color: #666; }
+
+.o-card { background: #fff; text-decoration: none; display: block; }
+.o-card-img-wrap { background: #fff; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.o-card-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+.o-card-info { padding: 1.2rem; }
+.o-card-brand { font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; color: #666; margin-bottom: 2px; }
+.o-card-name { font-size: 1.3rem; color: #333; line-height: 1.3; margin-bottom: 4px; }
+.o-card-price { font-size: 1.3rem; font-weight: 600; color: #333; }
+</style>
+</head>
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<div class="pd-loading" id="loading">Loading product details...</div>
+
+<div class="pd-wrap" id="productContent" style="display:none">
+  <div class="pd-gallery">
+    <div class="pd-main-img">
+      <img id="pdMainImage" src="" alt="">
+    </div>
+    <div class="pd-thumbs" id="pdThumbs"></div>
+  </div>
+  <div class="pd-info">
+    <div class="pd-brand" id="pdBrand"></div>
+    <h1 class="pd-name" id="pdName"></h1>
+    <div class="pd-price" id="pdPrice"></div>
+    <div class="pd-rating">
+      <span class="pd-stars" id="pdStars"></span>
+      <span class="pd-review-count" id="pdReviews"></span>
+    </div>
+
+    <div class="pd-section">
+      <div class="pd-section-title">Description</div>
+      <div class="pd-desc" id="pdDesc"></div>
+    </div>
+
+    <div class="pd-order">
+      <a id="pdOrderBtn" href="contact.html" class="o-btn o-btn-primary">Order via WhatsApp</a>
+      <a href="products.html" class="o-btn o-btn-outline">Back to Products</a>
+    </div>
+
+    <div class="pd-section" id="pdDetails" style="display:none">
+      <div class="pd-section-title">Product Details</div>
+      <div id="pdDetailsContent"></div>
+    </div>
+  </div>
+</div>
+
+<div class="pd-more" style="display:none" id="moreProducts">
+  <div class="o-container">
+    <h2>More Products</h2>
+    <div class="pd-more-grid" id="moreGrid"></div>
+  </div>
+</div>
+
+<div data-include="partials/footer.html"></div>
+
+<div class="fab-whatsapp" aria-label="Contact us">
+  <a class="fab-main" href="https://chat.whatsapp.com/KSx8bf7uMZBFZQhG5feGZ6" target="_blank" rel="noopener" aria-label="Join WhatsApp Group"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c 0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <span class="fab-tooltip">Join Business WhatsApp Group</span>
+  <a class="fab-call" href="tel:+2348063018798" aria-label="Call +234 806 301 8798">📞</a>
+  <span class="fab-tooltip call-tt">Call +234 806 301 8798</span>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+
+  if (!code) {
+    document.getElementById('loading').innerHTML = '<div class="pd-error"><h2>No product selected</h2><p>Please select a product from our catalog.</p><a href="products.html" class="o-btn o-btn-primary" style="margin-top:2rem">Browse Products</a></div>';
+    return;
+  }
+
+  fetch('data/products.json')
+    .then(function(r) { return r.json(); })
+    .then(function(products) {
+      var product = null;
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].code === code) {
+          product = products[i];
+          break;
+        }
+      }
+
+      if (!product) {
+        document.getElementById('loading').innerHTML = '<div class="pd-error"><h2>Product not found</h2><p>This product could not be found in our catalog.</p><a href="products.html" class="o-btn o-btn-primary" style="margin-top:2rem">Browse Products</a></div>';
+        return;
+      }
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('productContent').style.display = 'grid';
+
+      document.title = product.name + ' · Oghenekaro Betty Oriflame';
+
+      var imgUrl = product.mediaId > 0
+        ? 'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2FProducts%2F' + product.code + '%2F' + product.code + '_1.png&MediaId=' + product.mediaId + '&Version=1&w=600&bc=%23f5f5f5&ib=%23f5f5f5&h=600&q=90&imageFormat=WebP'
+        : 'images/products/placeholder.svg';
+      document.getElementById('pdMainImage').src = imgUrl;
+      document.getElementById('pdMainImage').alt = product.name;
+
+      document.getElementById('pdBrand').textContent = product.brand;
+      document.getElementById('pdName').textContent = product.name;
+      document.getElementById('pdPrice').textContent = product.price;
+
+      var stars = product.rating || 4.5;
+      var full = Math.floor(stars);
+      var half = stars - full >= 0.5 ? 1 : 0;
+      var empty = 5 - full - half;
+      document.getElementById('pdStars').textContent = '\u2605'.repeat(full) + (half ? '\u00bd' : '') + '\u2606'.repeat(empty);
+      document.getElementById('pdReviews').textContent = '(' + (product.reviewCount || 0).toLocaleString() + ' reviews)';
+
+      document.getElementById('pdDesc').textContent = product.description || 'Premium quality Oriflame product. Order now for nationwide delivery in Nigeria.';
+
+      var orderBtn = document.getElementById('pdOrderBtn');
+      orderBtn.href = 'https://wa.me/2348063018798?text=I%27m%20interested%20in%20' + encodeURIComponent(product.name) + '%20(' + product.code + ')%20-%20' + encodeURIComponent(product.price);
+
+      var detailsEl = document.getElementById('pdDetails');
+      var detailsContent = document.getElementById('pdDetailsContent');
+      var details = [];
+      if (product.code && product.code !== 'placeholder') details.push({label: 'Product Code', value: product.code});
+      if (product.brand) details.push({label: 'Brand', value: product.brand});
+      if (product.category) details.push({label: 'Category', value: product.category.charAt(0).toUpperCase() + product.category.slice(1).replace('-', ' & ')});
+      details.push({label: 'Authenticity', value: '100% Genuine Oriflame'});
+      details.push({label: 'Delivery', value: 'Nationwide (Nigeria)'});
+
+      if (details.length > 0) {
+        detailsEl.style.display = 'block';
+        detailsContent.innerHTML = '';
+        for (var d = 0; d < details.length; d++) {
+          detailsContent.innerHTML += '<div class="pd-detail-row"><span class="pd-detail-label">' + details[d].label + '</span><span class="pd-detail-value">' + details[d].value + '</span></div>';
+        }
+      }
+
+      var moreGrid = document.getElementById('moreGrid');
+      var sameCat = [];
+      for (var p = 0; p < products.length; p++) {
+        if (products[p].category === product.category && products[p].code !== product.code && sameCat.length < 4) {
+          sameCat.push(products[p]);
+        }
+      }
+      if (sameCat.length > 0) {
+        document.getElementById('moreProducts').style.display = 'block';
+        document.querySelector('.pd-more h2').textContent = 'More in ' + product.category.charAt(0).toUpperCase() + product.category.slice(1).replace('-', ' & ');
+        moreGrid.innerHTML = '';
+        for (var s = 0; s < sameCat.length; s++) {
+          var p2 = sameCat[s];
+          var img2 = p2.mediaId > 0
+            ? 'https://media-cdn.oriflame.com/productImage?externalMediaId=product-management-media%2FProducts%2F' + p2.code + '%2F' + p2.code + '_1.png&MediaId=' + p2.mediaId + '&Version=1&w=300&bc=%23f5f5f5&ib=%23f5f5f5&h=300&q=90&imageFormat=WebP'
+            : 'images/products/placeholder.svg';
+          moreGrid.innerHTML += '<a href="product-detail.html?code=' + p2.code + '" class="o-card"><div class="o-card-img-wrap"><img src="' + img2 + '" alt="' + p2.name + '" loading="lazy" onerror="this.parentElement.style.background=\'#f5f5f5\';this.style.display=\'none\'"></div><div class="o-card-info"><div class="o-card-brand">' + p2.brand + '</div><div class="o-card-name">' + p2.name + '</div><div class="o-card-price">' + p2.price + '</div></div></a>';
+        }
+      }
+    })
+    .catch(function(e) {
+      document.getElementById('loading').innerHTML = '<div class="pd-error"><h2>Something went wrong</h2><p>Please try again or contact us via WhatsApp.</p><a href="contact.html" class="o-btn o-btn-primary" style="margin-top:2rem">Contact Us</a></div>';
+      console.error(e);
+    });
+})();
+</script>
+
+</body>
+</html>
